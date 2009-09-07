@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/res" >
+        <file>img/application-exit.png</file>
+        <file>img/compile.png</file>
+        <file>img/document-new.png</file>
+        <file>img/document-open.png</file>
+        <file>img/document-save.png</file>
+        <file>img/document-save-as.png</file>
+        <file>img/qpasm_logo.png</file>
+        <file>img/run.png</file>
+        <file>img/step.png</file>
+        <file>img/step-next.png</file>
+        <file>img/edit-redo.png</file>
+        <file>img/edit-undo.png</file>
+        <file>img/timed-step.png</file>
+        <file>img/edit-copy.png</file>
+        <file>img/edit-cut.png</file>
+        <file>img/edit-paste.png</file>
+        <file>img/pause.png</file>
+        <file>img/stop.png</file>
+        <file>img/list-add.png</file>
+        <file>img/list-remove.png</file>
+        <file>img/bp.png</file>
+        <file>img/check-no.png</file>
+        <file>img/check-yes.png</file>
+        <file>img/dynamic-memory.png</file>
+        <file>img/static-memory.png</file>
+        <file>img/configure.png</file>
+    </qresource>
+</RCC>
