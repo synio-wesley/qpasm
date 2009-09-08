@@ -129,7 +129,10 @@ void MainWindow::loadSettings() {
     restoreState(settings.value("state", QByteArray()).toByteArray());
     restoreGeometry(settings.value("geometry", QByteArray()).toByteArray());
     timedStepInterval = settings.value("timedStepInterval", 500).toInt();
-    ui->frameAsmCode->setNewFont(QFont(settings.value("font", "Monospace").toString()));
+    QFont f;
+    f.setStyleHint(QFont::TypeWriter);
+    f.setFamily(settings.value("font", "Monospace").toString());
+    ui->frameAsmCode->setNewFont(f);
     updateColorScheme();
 }
 
