@@ -123,7 +123,7 @@ void NumberingWidget::paintEvent(QPaintEvent *e) {
 }
 
 void NumberingWidget::mouseReleaseEvent(QMouseEvent *e) {
-    int height = edit->document()->documentMargin();
+    qreal height = edit->document()->documentMargin();
     int lineCount = 0;
     int verticalScroll = edit->verticalScrollBar()->value();
 
