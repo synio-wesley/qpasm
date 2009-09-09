@@ -1,0 +1,66 @@
+#summary User manual
+
+= Installation =
+
+We do not provide an installer, but instead provide archives containing the executable and the required dependencies. Just unpack the archive and run QPasm. The configuration file will be saved in the same directory as the executable in a portable format.
+
+= Configuring QPasm =
+
+The layout and geometry of the QPasm window is saved automatically. If you would like to reset the layout to the default layout, use the _Restore default layout_ option which you can find by opening the Settings window by clickong on _Edit -> Settings_.
+
+You can also tweak the timestep interval, and the font and colors for the text editor in the Settings window.
+
+= Writing and running PASM applications =
+
+You can write pseudo-assembler applications in the _Code Editor_.
+
+== Supported instructions ==
+
+|| *Command* || *What it does* ||
+|| NOP || Does nothing ||
+|| LDA #X, LDB #X || Load value X in register A or B ||
+|| LDA X, LDB X || Load contents of address X in register A or B ||
+|| LDA (X), LDB (X) || Load contents of address pointed to by address X in register A or B ||
+|| STA X, STB X || Store contents of register A or B in address X ||
+|| STA (X), STB (X) || Store contents of register A or B in address pointed to by address X ||
+|| INP || Ask for input from the user and store inputted value in register A ||
+|| OUT || Output contents of register A ||
+|| ADD || Add contents of register A to contents of register B and store the result in register A ||
+|| SUB || Subtract contents of register B from contents of register A and store the result in register A ||
+|| MUL || Multiply contents of register A by contents of register B and store the result in register A ||
+|| DIV || Divide contents of register A by contents of register B and store the result in register A ||
+|| JMP X || Unconditional jump to instruction at address X ||
+|| JSP X || Jump to instruction at address X if contents of register A is strictly positive ||
+|| JSN X || Jump to instruction at address X if contents of register A is strictly negative ||
+|| JIZ X || Jump to instruction at address X if contents of register A is equal to 0 ||
+|| JOF X || Jump to instruction at address X if the previous mathematical instruction caused an overflow ||
+|| JSB X || Unconditional jump to subroutine at address X ||
+|| RTS || Return from subroutine ||
+|| HLT || End of assembler program ||
+
+== Using labels ==
+
+Because working with addresses can be very confusing, QPasm supports labels. You can attach labels to addresses by prepending the instruction in the _Code Editor_ with a variable which may contain lowercase and uppercase letters and the underscore symbol. You can refer to labels by putting a label between square brackets instead of providing an address. An example of a simple program using labels follows:
+
+{{{
+ask_number: INP
+            JIZ if_zero
+            JMP ask_number
+if_zero:    HLT
+}}}
+
+This sample program will keep asking the user for numbers until the inputted number is equal to zero.
+
+== Using comments ==
+
+You can write comments on a seperate line or after instructions. QPasm automatically knows the difference between instructions and comments. If a comment is placed on a seperate line, the comment will be compiled into a NOP instruction.
+
+== About whitespace ==
+
+Spaced and tabs may occur before and after instructions, as well as between the instruction operator and its operand.
+
+== Running your application ==
+
+Just press the green _Run_ button or press _Ctrl+F5_ to test your program.
+
+= Debugging PASM applications =
