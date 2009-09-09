@@ -24,8 +24,8 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QWidget" name="layoutWidget">
-       <layout class="QVBoxLayout" name="verticalLayout">
+      <widget class="QWidget" name="layoutWidgetEditor">
+       <layout class="QVBoxLayout" name="editorLayout">
         <item>
          <widget class="QLabel" name="label_2">
           <property name="styleSheet">
@@ -54,8 +54,8 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+      <widget class="QWidget" name="layoutWidgetMemory">
+       <layout class="QVBoxLayout" name="memLayout">
         <item>
          <widget class="QLabel" name="label_3">
           <property name="styleSheet">
