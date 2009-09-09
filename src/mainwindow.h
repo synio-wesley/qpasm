@@ -37,16 +37,14 @@ class QTimer;
 class PasmThread;
 class QLabel;
 
-namespace Ui
-{
+namespace Ui {
     class MainWindowClass;
 }
 
 /**
   * Main window of QPasm.
   */
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:

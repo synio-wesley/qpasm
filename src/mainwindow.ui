@@ -14,8 +14,8 @@
    <string>QPasm - Pseudo Assembler</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/res/img/compile.png</normaloff>:/res/img/compile.png</iconset>
+   <iconset resource="qpasm.qrc">
+    <normaloff>:/res/img/qpasm.png</normaloff>:/res/img/qpasm.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -123,7 +123,7 @@
              <string>...</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="qpasm.qrc">
               <normaloff>:/res/img/list-add.png</normaloff>:/res/img/list-add.png</iconset>
             </property>
            </widget>
@@ -134,7 +134,7 @@
              <string>...</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="qpasm.qrc">
               <normaloff>:/res/img/list-remove.png</normaloff>:/res/img/list-remove.png</iconset>
             </property>
            </widget>
@@ -524,7 +524,7 @@ p, li { white-space: pre-wrap; }
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="qpasm.qrc">
            <normaloff>:/res/img/list-add.png</normaloff>:/res/img/list-add.png</iconset>
          </property>
         </widget>
@@ -535,7 +535,7 @@ p, li { white-space: pre-wrap; }
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="qpasm.qrc">
            <normaloff>:/res/img/list-remove.png</normaloff>:/res/img/list-remove.png</iconset>
          </property>
         </widget>
@@ -567,7 +567,7 @@ p, li { white-space: pre-wrap; }
   </widget>
   <action name="actionNew">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/document-new.png</normaloff>:/res/img/document-new.png</iconset>
    </property>
    <property name="text">
@@ -582,7 +582,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/document-open.png</normaloff>:/res/img/document-open.png</iconset>
    </property>
    <property name="text">
@@ -594,7 +594,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/document-save.png</normaloff>:/res/img/document-save.png</iconset>
    </property>
    <property name="text">
@@ -606,7 +606,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionSaveAs">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/document-save-as.png</normaloff>:/res/img/document-save-as.png</iconset>
    </property>
    <property name="text">
@@ -615,7 +615,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionCompile">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/compile.png</normaloff>:/res/img/compile.png</iconset>
    </property>
    <property name="text">
@@ -627,7 +627,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionRun">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/run.png</normaloff>:/res/img/run.png</iconset>
    </property>
    <property name="text">
@@ -639,7 +639,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionExit">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/application-exit.png</normaloff>:/res/img/application-exit.png</iconset>
    </property>
    <property name="text">
@@ -648,7 +648,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionStep">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/step.png</normaloff>:/res/img/step.png</iconset>
    </property>
    <property name="text">
@@ -668,7 +668,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionUndo">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/edit-undo.png</normaloff>:/res/img/edit-undo.png</iconset>
    </property>
    <property name="text">
@@ -680,7 +680,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionRedo">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/edit-redo.png</normaloff>:/res/img/edit-redo.png</iconset>
    </property>
    <property name="text">
@@ -692,7 +692,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionTimedStep">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/timed-step.png</normaloff>:/res/img/timed-step.png</iconset>
    </property>
    <property name="text">
@@ -701,7 +701,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionCut">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/edit-cut.png</normaloff>:/res/img/edit-cut.png</iconset>
    </property>
    <property name="text">
@@ -713,7 +713,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionCopy">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/edit-copy.png</normaloff>:/res/img/edit-copy.png</iconset>
    </property>
    <property name="text">
@@ -725,7 +725,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionPaste">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/edit-paste.png</normaloff>:/res/img/edit-paste.png</iconset>
    </property>
    <property name="text">
@@ -737,7 +737,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionStop">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/stop.png</normaloff>:/res/img/stop.png</iconset>
    </property>
    <property name="text">
@@ -746,7 +746,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionPause">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/pause.png</normaloff>:/res/img/pause.png</iconset>
    </property>
    <property name="text">
@@ -758,7 +758,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionSettings">
    <property name="icon">
-    <iconset>
+    <iconset resource="qpasm.qrc">
      <normaloff>:/res/img/configure.png</normaloff>:/res/img/configure.png</iconset>
    </property>
    <property name="text">
@@ -775,6 +775,8 @@ p, li { white-space: pre-wrap; }
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="qpasm.qrc"/>
+ </resources>
  <connections/>
 </ui>

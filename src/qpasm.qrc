@@ -26,5 +26,6 @@
         <file>img/dynamic-memory.png</file>
         <file>img/static-memory.png</file>
         <file>img/configure.png</file>
+        <file>img/qpasm.png</file>
     </qresource>
 </RCC>

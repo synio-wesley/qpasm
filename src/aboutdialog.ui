@@ -14,8 +14,8 @@
    <string>About QPasm</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/res/img/compile.png</normaloff>:/res/img/compile.png</iconset>
+   <iconset resource="qpasm.qrc">
+    <normaloff>:/res/img/qpasm.png</normaloff>:/res/img/qpasm.png</iconset>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -27,7 +27,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>:/res/img/qpasm_logo.png</pixmap>
+      <pixmap resource="qpasm.qrc">:/res/img/qpasm_logo.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -135,7 +135,9 @@ You should have received a copy of the GNU General Public License along with QPa
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="qpasm.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
