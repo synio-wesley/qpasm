@@ -6,7 +6,7 @@ We do not provide an installer, but instead provide archives containing the exec
 
 = Configuring QPasm =
 
-The layout and geometry of the QPasm window is saved automatically. If you would like to reset the layout to the default layout, use the _Restore default layout_ option which you can find by opening the Settings window by clickong on _Edit -> Settings_.
+The layout and geometry of the QPasm window is saved automatically. If you would like to reset the layout to the default layout, use the _Restore default layout_ option which you can find by opening the Settings window by clicking on _Edit -> Settings_.
 
 You can also tweak the timestep interval, and the font and colors for the text editor in the Settings window.
 
@@ -61,6 +61,18 @@ Spaced and tabs may occur before and after instructions, as well as between the 
 
 == Running your application ==
 
-Just press the green _Run_ button or press _Ctrl+F5_ to test your program.
+Just press the _Compile_ button or press _Ctrl+F7_ to compile your application and press the green _Run_ button or press _Ctrl+F5_ to test your program.
 
 = Debugging PASM applications =
+
+QPasm has some integrated debugging capabilities.
+
+== Stepping through your program ==
+
+By clicking the blue _Step_ button or pressing _F5_ you can execute instructions in your program one by one. The instruction that will be executed next will be highlighted in a blue color in the _Code Editor_ and a red dot will indicate it in the _Memory_ table.
+
+You can also use the _Timed step_ button to execute instructions one by one with a specified interval in between them. The interval can be configured in the _Settings_ window by clicking on _Edit -> Settings_. You can use the _Pause_ button or press _CTRL+P_ to pause the application. After the program has paused you can edit data on-the-fly (see below) or you can resume the program by clicking on either the _Step_, _Timed Step_ or _Run_ button. You can use the _Stop_ button to stop execution of the application manually.
+
+== Using breakpoints ==
+
+== Editing data on-the-fly ==
