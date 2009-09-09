@@ -22,20 +22,17 @@
 
 AboutDialog::AboutDialog(QWidget *parent) :
     QDialog(parent),
-    m_ui(new Ui::AboutDialog)
-{
+    m_ui(new Ui::AboutDialog) {
     m_ui->setupUi(this);
     setMinimumSize(sizeHint());
     setMaximumSize(sizeHint());
 }
 
-AboutDialog::~AboutDialog()
-{
+AboutDialog::~AboutDialog() {
     delete m_ui;
 }
 
-void AboutDialog::changeEvent(QEvent *e)
-{
+void AboutDialog::changeEvent(QEvent *e) {
     QDialog::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
