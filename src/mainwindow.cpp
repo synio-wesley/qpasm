@@ -132,7 +132,7 @@ void MainWindow::loadSettings() {
     QFont f;
     f.setStyleHint(QFont::TypeWriter);
     f.setFamily(settings.value("font", "Monospace").toString());
-    ui->frameAsmCode->setNewFont(f);
+    setEditorFont(f);
     updateColorScheme();
 }
 
@@ -150,6 +150,7 @@ void MainWindow::setEditorFont(const QFont &font) {
     ui->frameAsmCode->setNewFont(font);
     QSettings settings("config.ini", QSettings::IniFormat, this);
     settings.setValue("font", font);
+    ui->frameAsmCode->textEdit()->setTabStopWidth(QFontMetrics(font).maxWidth() << 3 /* fm.maxWidth() * 8 */);
 }
 
 void MainWindow::updateColorScheme() {
