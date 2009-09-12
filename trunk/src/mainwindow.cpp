@@ -35,12 +35,14 @@
 #include <QPainter>
 #include <QCloseEvent>
 #include <QSettings>
+#include <QTranslator>
 
 #define ADDRESS_ROLE Qt::UserRole
 #define VALUE_ROLE   Qt::UserRole + 1
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindowClass) {
     // Setup user interface
+    translator = new QTranslator(this);
     ui->setupUi(this);
     posInfo = new QLabel(this);
     ui->statusBar->addPermanentWidget(posInfo);
@@ -50,8 +52,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     menu->setTitle(tr("&View"));
     ui->menuBar->insertMenu(ui->menuBar->actions()[3], menu);
     setUnifiedTitleAndToolBarOnMac(true);
-    setWindowTitle(tr("Untitled[*] - QPasm - Pseudo Assembler"));
+    setWindowTitle(tr("Untitled") + "[*] - QPasm - " + tr("Pseudo Assembler"));
     defaultLayout = saveState();
+    nameFilter = tr("Assembler programs") + " (*.asm);;" + tr("All files") + " (*)";
 
     // Some defaults
     changedSinceSave = false;
@@ -126,6 +129,11 @@ MainWindow::~MainWindow() {
 
 void MainWindow::loadSettings() {
     QSettings settings("config.ini", QSettings::IniFormat, this);
+
+    QString locale = settings.value("language", QLocale::system().name()).toString();
+    translator->load(QString("translations/qpasm_") + locale);
+    qApp->installTranslator(translator);
+
     restoreState(settings.value("state", QByteArray()).toByteArray());
     restoreGeometry(settings.value("geometry", QByteArray()).toByteArray());
     timedStepInterval = settings.value("timedStepInterval", 500).toInt();
@@ -284,6 +292,7 @@ void MainWindow::updateMemoryInfo(uint32_t address, int32_t value) {
 
     addressItem->setData(VALUE_ROLE, value);
     addressItem->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.png" : ":/res/img/static-memory.png"));
+    addressItem->setToolTip(pasm_isDynamicMemory(address) ? tr("Dynamic memory address") : tr("Static memory address"));
     valueDecItem->setData(Qt::DisplayRole, value);
     valueHexItem->setData(Qt::DisplayRole, QString("%1").arg(QString::number((unsigned int)value, 16), 8, '0'));
     valueBinItem->setData(Qt::DisplayRole, QString("%1").arg(QString::number((unsigned int)value, 2), 32, '0'));
@@ -501,7 +510,7 @@ bool MainWindow::saveFile(const QString &fileName) {
         saveDialog.setDefaultSuffix("asm");
         saveDialog.setFileMode(QFileDialog::AnyFile);
         saveDialog.setWindowTitle(tr("Save as..."));
-        saveDialog.setNameFilter(tr("Assembler programs (*.asm);;All files (*)"));
+        saveDialog.setNameFilter(nameFilter);
         saveDialog.setDirectory(savePath);
         saveDialog.setAcceptMode(QFileDialog::AcceptSave);
         if (saveDialog.exec() == QDialog::Accepted) {
@@ -518,7 +527,7 @@ bool MainWindow::saveFile(const QString &fileName) {
             out << ui->frameAsmCode->textEdit()->toPlainText() << "\n";
             this->fileName = saveAs;
             QFileInfo fileInfo(this->fileName);
-            setWindowTitle(fileInfo.fileName() + "[*] - QPasm - Pseudo Assembler");
+            setWindowTitle(fileInfo.fileName() + "[*] - QPasm - " + tr("Pseudo Assembler"));
             setWindowModified(false);
             ui->frameAsmCode->textEdit()->document()->setModified(false);
             changedSinceSave = false;
@@ -675,7 +684,7 @@ void MainWindow::on_actionNew_triggered() {
         ui->textOutput->clear();
         ui->frameAsmCode->textEdit()->clear();
         fileName = "";
-        setWindowTitle(tr("Untitled[*] - QPasm - Pseudo Assembler"));
+        setWindowTitle(tr("Untitled") + "[*] - QPasm - " + tr("Pseudo Assembler"));
         setWindowModified(false);
         ui->frameAsmCode->textEdit()->document()->setModified(false);
         changedSinceSave = false;
@@ -748,7 +757,7 @@ void MainWindow::on_actionOpen_triggered() {
         openDialog.setDefaultSuffix("asm");
         openDialog.setFileMode(QFileDialog::AnyFile);
         openDialog.setWindowTitle(tr("Choose the assembler program that you want to open..."));
-        openDialog.setNameFilter(tr("Assembler programs") + " (*.asm);;" + tr("All files") + " (*)");
+        openDialog.setNameFilter(nameFilter);
         openDialog.setDirectory(openPath);
         openDialog.setAcceptMode(QFileDialog::AcceptOpen);
         if (openDialog.exec() == QDialog::Accepted) {
@@ -985,6 +994,6 @@ void MainWindow::on_splitter_customContextMenuRequested(QPoint pos) {
 }
 
 void MainWindow::on_actionSettings_triggered() {
-    ConfigDialog dialog(this);
+    ConfigDialog dialog(this, translator);
     dialog.exec();
 }

@@ -21,14 +21,17 @@
 #include "ui_configdialog.h"
 #include <QSettings>
 #include <QColorDialog>
+#include <QTranslator>
 
-ConfigDialog::ConfigDialog(QWidget *parent) :
+ConfigDialog::ConfigDialog(QWidget *parent, QTranslator *translator) :
     QDialog(parent),
     m_ui(new Ui::ConfigDialog) {
     m_ui->setupUi(this);
     main = qobject_cast<MainWindow*>(parent);
     showCustomColors(false);
+    this->translator = translator;
     loadSettings();
+    connect(m_ui->langBox, SIGNAL(currentIndexChanged(int)), this, SLOT(changeLanguage(int)));
 }
 
 ConfigDialog::~ConfigDialog() {
@@ -51,12 +54,27 @@ void ConfigDialog::showCustomColors(bool show) {
     m_ui->pushOperands->setEnabled(show);
     m_ui->pushLabels->setEnabled(show);
     m_ui->baseOnLabel->setEnabled(show);
-    m_ui->baseOnLabel->setText(show ? "Base on: <a href=\"#light\">Light colors</a> | <a href=\"#dark\">Dark colors</a>" :
-                               "Base on: Light colors | Dark colors");
+    QString lightColText = (show ? " <a href=\"#light\">" : " ") + tr("Light colors") + (show ? "</a>" : "");
+    QString darkColText = (show ? "<a href=\"#dark\">" : "") + tr("Dark colors") + (show ? "</a>" : "");
+    m_ui->baseOnLabel->setText(tr("Base on:") + lightColText + " | " + darkColText);
 }
 
 void ConfigDialog::loadSettings() {
     QSettings settings("config.ini", QSettings::IniFormat, this);
+
+    // TODO: replace with code which automatically lists all available translations
+    m_ui->langBox->addItem(tr("English"), "");
+    m_ui->langBox->addItem(tr("Dutch"), "nl");
+
+    QString locale = settings.value("language", QLocale::system().name()).toString();
+    for (int i = 0; i < m_ui->langBox->count(); ++i) {
+        if (m_ui->langBox->itemData(i, Qt::UserRole).toString() == locale ||
+            m_ui->langBox->itemData(i, Qt::UserRole).toString() == locale.left(2)) {
+            m_ui->langBox->setCurrentIndex(i);
+            break;
+        }
+    }
+
     m_ui->spinInterval->setValue(settings.value("timedStepInterval", 500).toInt());
     m_ui->fontComboBox->setCurrentFont(QFont(settings.value("font", "Monospace").toString()));
 
@@ -202,4 +220,11 @@ void ConfigDialog::on_pushOperands_clicked() {
 
 void ConfigDialog::on_pushLabels_clicked() {
     pickColor(m_ui->pushLabels, 7);
+}
+
+void ConfigDialog::changeLanguage(int index) {
+    QString locale = m_ui->langBox->itemData(index, Qt::UserRole).toString();
+    translator->load(QString("translations/qpasm_") + locale);
+    QSettings settings("config.ini", QSettings::IniFormat, this);
+    settings.setValue("language", locale);
 }

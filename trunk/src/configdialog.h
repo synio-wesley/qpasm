@@ -30,7 +30,7 @@ namespace Ui {
 class ConfigDialog : public QDialog {
     Q_OBJECT
 public:
-    ConfigDialog(QWidget *parent = 0);
+    ConfigDialog(QWidget *parent = 0, QTranslator *translator = 0);
     ~ConfigDialog();
 
 protected:
@@ -46,8 +46,10 @@ private:
     Ui::ConfigDialog *m_ui;
     MainWindow *main;
     QList<QVariant> colors;
+    QTranslator *translator;
 
 private slots:
+    void changeLanguage(int index);
     void on_pushData_clicked();
     void on_pushEmpty_clicked();
     void on_pushHalt_clicked();
