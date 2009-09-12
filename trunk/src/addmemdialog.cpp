@@ -53,7 +53,7 @@ void AddMemDialog::changeEvent(QEvent *e) {
     QDialog::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        m_ui->retranslateUi(this);
+        m_ui->retranslateUi(this); // Retranslate the user interface on-the-fly
         break;
     default:
         break;

@@ -15,20 +15,19 @@
         <translation>Vertalers</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.ui" line="116"/>
+        <location filename="../aboutdialog.ui" line="109"/>
         <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="29"/>
-        <source>&lt;span style=&quot;font-size: 14pt;&quot;&gt;QPasm version %1&lt;/span&gt; (LibPASM %2)</source>
-        <oldsource>&lt;span style=&quot;font-size: 14pt;&quot;&gt;QPasm version %1&lt;/span&gt; using LibPASM %2</oldsource>
-        <translation>&lt;span style=&quot;font-size: 14pt;&quot;&gt;QPasm versie %1&lt;/span&gt; (LibPASM %2)</translation>
+        <source>&lt;span style=&quot;font-size: 14pt;&quot;&gt;QPasm %1&lt;/span&gt; (LibPASM %2)</source>
+        <translation>&lt;span style=&quot;font-size: 14pt;&quot;&gt;QPasm %1&lt;/span&gt; (LibPASM %2)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="30"/>
         <source>QPasm is a graphical frontend for the PASM pseudo assembler library. You can write, compile, run and debug simple assembler programs with this application.</source>
-        <translation>QPasm is een grafisch frontend voor de PASM pseudo-assembler bibliotheek. Met QPasm kan u eenvoudige assembler programma&apos;s schrijven, compileren, testen en debuggen.</translation>
+        <translation>QPasm is een grafisch frontend voor de PASM pseudo-assembler-bibliotheek. Met QPasm kunt u eenvoudige assembler-programma&apos;s schrijven, compileren, testen en debuggen.</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="31"/>
@@ -67,6 +66,16 @@ You should have received a copy of the GNU General Public License along with QPa
 QPasm wordt verspreid in de hoop dat het nuttig zal zijn maar ZONDER ENIGE GARANTIE; zelfs zonder de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU Lesser General Public License voor meer details.
 
 U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben samen met dit programma. Indien dit niet het geval is, kijk op &lt;http://www.gnu.org/licenses/&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="40"/>
+        <source>The following people have translated QPasm into other languages:</source>
+        <translation>De onderstaande personen hebben QPasm naar andere talen vertaald:</translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="41"/>
+        <source>Dutch</source>
+        <translation>Nederlands</translation>
     </message>
 </context>
 <context>
@@ -132,119 +141,119 @@ U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben
     <message>
         <location filename="../configdialog.ui" line="32"/>
         <source>&amp;Timed step interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Ui&amp;tvoeren met interval</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="42"/>
         <source> msec</source>
-        <translation type="unfinished"></translation>
+        <translation> msec</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="58"/>
         <source>Window layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Vensterlay-out</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="65"/>
         <source>&amp;Restore default layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaard lay-out he&amp;rstellen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="72"/>
         <source>&amp;Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taa&amp;l:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="90"/>
         <source>Editor settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor-instellingen</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="98"/>
         <source>&amp;Font</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lettertype</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="115"/>
         <source>C&amp;olor scheme</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kleurenschema</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="126"/>
         <source>Try to adapt to theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Aan thema aanpassen</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="57"/>
         <location filename="../configdialog.ui" line="131"/>
         <source>Light colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Lichte kleuren</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="58"/>
         <location filename="../configdialog.ui" line="136"/>
         <source>Dark colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Donkere kleuren</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="59"/>
         <source>Base on:</source>
-        <translation type="unfinished"></translation>
+        <translation>Baseren op:</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="66"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Engels</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="67"/>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Nederlands</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="141"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangepast</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="156"/>
         <source>Data operations</source>
-        <translation type="unfinished"></translation>
+        <translation>Data-instructies</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="166"/>
         <source>Jump operations</source>
-        <translation type="unfinished"></translation>
+        <translation>Jump-instructies</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="176"/>
         <source>Empty operations</source>
-        <translation type="unfinished"></translation>
+        <translation>Lege instructies</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="186"/>
         <source>Input and output</source>
-        <translation type="unfinished"></translation>
+        <translation>In- en uitvoer</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="196"/>
         <source>Math operations</source>
-        <translation type="unfinished"></translation>
+        <translation>Reken-instructies</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="206"/>
         <source>Halt operations</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop-instructie</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="216"/>
         <source>Operands</source>
-        <translation type="unfinished"></translation>
+        <translation>Operanden</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="226"/>
         <source>Labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Labels</translation>
     </message>
 </context>
 <context>
@@ -252,251 +261,251 @@ U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben
     <message>
         <location filename="../mainwindow.cpp" line="52"/>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Beeld</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="55"/>
-        <location filename="../mainwindow.cpp" line="687"/>
+        <location filename="../mainwindow.cpp" line="696"/>
         <source>Untitled</source>
-        <translation type="unfinished"></translation>
+        <translation>Naamloos</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="55"/>
-        <location filename="../mainwindow.cpp" line="530"/>
-        <location filename="../mainwindow.cpp" line="687"/>
+        <location filename="../mainwindow.cpp" line="539"/>
+        <location filename="../mainwindow.cpp" line="696"/>
         <source>Pseudo Assembler</source>
-        <translation type="unfinished"></translation>
+        <translation>Pseudo-assembler</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
+        <location filename="../mainwindow.cpp" line="304"/>
         <source>Dynamic memory address</source>
-        <translation type="unfinished"></translation>
+        <translation>Dynamisch geheugenadres</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
+        <location filename="../mainwindow.cpp" line="304"/>
         <source>Static memory address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="324"/>
-        <source>There&apos;s not enough memory available on your physical machine to perform the necessary operations.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="327"/>
-        <source>The assembler program contains an unsupported opcode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="330"/>
-        <source>The assembler program contains an unsupported address mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Statisch geheugenadres</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="333"/>
-        <source>Frontend tried to register an unsupported callback type.</source>
-        <translation type="unfinished"></translation>
+        <source>There&apos;s not enough memory available on your physical machine to perform the necessary operations.</source>
+        <translation>Er is niet genoeg geheugen beschikbaar op uw computer om de benodigde handelingen uit te voeren.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="336"/>
+        <source>The assembler program contains an unsupported opcode.</source>
+        <translation>Het assembler-programma bevat een niet ondersteunde opcode.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="339"/>
+        <source>The assembler program contains an unsupported address mode.</source>
+        <translation>Het assembler-programma bevat een niet ondersteunde adresmodus.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="342"/>
+        <source>Frontend tried to register an unsupported callback type.</source>
+        <translation>Frontend probeerde een niet ondersteund callback-type te registreren.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="345"/>
         <source>An operand was required for one of the instructions but was not given.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er was een operand nodig voor één van de instructies, maar die was niet opgegeven.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="340"/>
+        <location filename="../mainwindow.cpp" line="349"/>
         <source>The assembler program tried to access an invalid memory region (memory address %1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Het assembler-programma probeerde toegang te krijgen tot een ongeldig geheugengebied (geheugenadres %1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="346"/>
+        <location filename="../mainwindow.cpp" line="355"/>
         <source>Call stack underflow. There&apos;s no address to return to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Call stack underflow. Er is geen adres om naar terug te keren.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="350"/>
+        <location filename="../mainwindow.cpp" line="359"/>
         <source>Division by zero cannot be done. Assembler program tried to divide by zero during execution of instruction at address %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Door nul delen kan niet. Assembler-programma probeerde door nul te delen tijdens uitvoering van instructie op adres %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="357"/>
+        <location filename="../mainwindow.cpp" line="366"/>
         <source>The symbol &lt;strong&gt;%1&lt;/strong&gt; which was encountered at line %2 couldn&apos;t be resolved.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="364"/>
-        <source>&lt;strong&gt;Warning:&lt;/strong&gt; overflow caused by instruction at address %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het symbool &lt;strong&gt;%1&lt;/strong&gt; dat werd tegengekomen op regel %2 kon niet gevonden worden.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="373"/>
-        <source>Unknown error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="377"/>
-        <source>Error occured</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="378"/>
-        <source>An error has occured:</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;strong&gt;Warning:&lt;/strong&gt; overflow caused by instruction at address %1.</source>
+        <translation>&lt;strong&gt;Waarschuwing:&lt;/strong&gt; overflow verzoorzaakt door instructie op adres %1.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="382"/>
+        <source>Unknown error</source>
+        <translation>Onbekende fout</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="386"/>
+        <source>Error occured</source>
+        <translation>Fout opgetreden</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="387"/>
+        <source>An error has occured:</source>
+        <translation>Er is een fout opgetreden:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="391"/>
         <source>Input required</source>
-        <translation type="unfinished"></translation>
+        <translation>Invoer vereist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="383"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>The assembler program requests input from the user:</source>
-        <translation type="unfinished"></translation>
+        <translation>Het assembler-programma verzoekt invoer van de gebruiker:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="389"/>
+        <location filename="../mainwindow.cpp" line="398"/>
         <source>Output:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoer:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="410"/>
         <source>Program started.</source>
-        <translation type="unfinished"></translation>
+        <translation>Programma gestart.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="422"/>
         <source>Program ended.</source>
-        <translation type="unfinished"></translation>
+        <translation>Programma beëindigd.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="443"/>
+        <location filename="../mainwindow.cpp" line="452"/>
         <source>line</source>
-        <translation type="unfinished"></translation>
+        <translation>regel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="444"/>
+        <location filename="../mainwindow.cpp" line="453"/>
         <source>column</source>
-        <translation type="unfinished"></translation>
+        <translation>kolom</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="521"/>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan als...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="803"/>
+        <source>The file couldn&apos;t be opened. Please check your permissions.</source>
+        <translation>Het bestand kon niet geopend worden. Controleer uw toegangsrechten.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="57"/>
         <source>Assembler programs</source>
         <oldsource>Assembler programs (*.asm);;All files (*)</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Assembler-programma&apos;s</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="535"/>
+        <location filename="../mainwindow.cpp" line="544"/>
         <source>Could not save file</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon bestand niet opslaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="535"/>
+        <location filename="../mainwindow.cpp" line="544"/>
         <source>Could not save the file. The file couldn&apos;t be opened or created. Please check your permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon bestand niet opslaan. Het bestand kon niet geopend of aangemaakt worden. Controleer uw toegangsrechten.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="549"/>
+        <location filename="../mainwindow.cpp" line="558"/>
         <source>Unsaved document</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet opgeslagen document</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="549"/>
+        <location filename="../mainwindow.cpp" line="558"/>
         <source>The current document has not been saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het huidige document is nog niet opgeslagen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="566"/>
+        <location filename="../mainwindow.cpp" line="575"/>
         <source>Code has changed after last compile</source>
-        <translation type="unfinished"></translation>
+        <translation>Code is gewijzigd na laatste keer compileren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="566"/>
+        <location filename="../mainwindow.cpp" line="575"/>
         <source>The code has changed after the last compile. Do you want to recompile before running?</source>
-        <translation type="unfinished"></translation>
+        <translation>De code is gewijzigd nadat u voor de laatste keer gecompileerd heeft. Wilt u opnieuw compileren alvorens uit te voeren?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="759"/>
+        <location filename="../mainwindow.cpp" line="768"/>
         <source>Choose the assembler program that you want to open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies het te openen assembler-programma...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="57"/>
         <source>All files</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle bestanden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="787"/>
+        <location filename="../mainwindow.cpp" line="796"/>
         <source>QPasm - Pseudo Assembler</source>
-        <translation type="unfinished"></translation>
+        <translation>QPasm - Pseudo-assembler</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="794"/>
+        <location filename="../mainwindow.cpp" line="803"/>
         <source>Could not open file</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon bestand niet openen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="794"/>
-        <source>Could not open the file. The file couldn&apos;t be opened. Please check your permissions.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="892"/>
         <source>Switch values of memory addresses?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="884"/>
-        <source>The given memory address already exists. Would you like to switch the contents of both memory addresses?</source>
-        <translation type="unfinished"></translation>
+        <translation>Waardes van geheugenadressen omwisselen?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="893"/>
+        <source>The given memory address already exists. Would you like to switch the contents of both memory addresses?</source>
+        <translation>Het opgegeven geheugenadres bestaat reeds. Wilt u de inhoud van beide geheugenadressen omwisselen?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="902"/>
         <source>Cannot delete static memory cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan statische geheugencel niet verwijderen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="894"/>
+        <location filename="../mainwindow.cpp" line="903"/>
         <source>You copied the contents of a static memory cell to a new dynamic memory cell. Since static memory can&apos;t be deleted the static memory cell will be initialized with the value 0.</source>
-        <translation type="unfinished"></translation>
+        <translation>U heeft de inhoud van een statische geheugencel gekopieerd naar een nieuwe dynamische geheugencel. Aangezien statisch geheugen niet verwijderd kan worden, zal de cel geïnitialiseerd worden met de waarde 0.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="958"/>
+        <location filename="../mainwindow.cpp" line="967"/>
         <source>Are you sure you want to delete the selected dynamic memory cell?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet u zeker dat u de geselecteerde dynamische geheugencel wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="960"/>
+        <location filename="../mainwindow.cpp" line="969"/>
         <source>Can&apos;t delete static memory cells. Do you want to set the selected static memory cell to 0?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan statische geheugencellen niet verwijderen. Wilt u de waarde van de geselecteerde statische geheugencel instellen op 0?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="962"/>
+        <location filename="../mainwindow.cpp" line="971"/>
         <source>Delete memory cell?</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheugencel verwijderen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="970"/>
+        <location filename="../mainwindow.cpp" line="979"/>
         <source>Clear all memory?</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheugen leegmaken?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="970"/>
+        <location filename="../mainwindow.cpp" line="979"/>
         <source>Do you want to delete all dynamic memory allocated and set the contents of all static memory to 0 for this assembler program?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wilt u voor dit assembler-programma al het toegewezen dynamische geheugen wissen en de inhoud van al het statische geheugen instellen op 0?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="991"/>
+        <location filename="../mainwindow.cpp" line="1000"/>
         <source>Layout horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontale lay-out</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="992"/>
+        <location filename="../mainwindow.cpp" line="1001"/>
         <source>Layout vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticale lay-out</translation>
     </message>
 </context>
 <context>
@@ -504,42 +513,42 @@ U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>QPasm - Pseudo Assembler</source>
-        <translation type="unfinished"></translation>
+        <translation>QPasm - Pseudo-assembler</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="35"/>
         <source>Code Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Code-editor</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="65"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheugen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="90"/>
         <source>Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Adres</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="95"/>
         <source>Dec Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Dec. waarde</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="100"/>
         <source>Hex Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Hex. waarde</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="105"/>
         <source>Bin Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Bin. waarde</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="110"/>
-        <source>Command</source>
-        <translation type="unfinished"></translation>
+        <source>Instruction</source>
+        <translation>Instructie</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="123"/>
@@ -547,258 +556,261 @@ U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben
         <location filename="../mainwindow.ui" line="522"/>
         <location filename="../mainwindow.ui" line="533"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
         <location filename="../mainwindow.ui" line="557"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Leegmaken</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="177"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkbalk</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="224"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bestand</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="236"/>
         <source>&amp;Project</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Project</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="248"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Help</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="254"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bewerken</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="275"/>
         <source>Processor</source>
-        <translation type="unfinished"></translation>
+        <translation>Processor</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="294"/>
         <source>Program counter</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmateller</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="325"/>
         <source>Registers</source>
-        <translation type="unfinished"></translation>
+        <translation>Registers</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="343"/>
         <source>A:</source>
-        <translation type="unfinished"></translation>
+        <translation>A:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="366"/>
         <source>B:</source>
-        <translation type="unfinished"></translation>
+        <translation>B:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="399"/>
         <source>Flags</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlaggen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="409"/>
         <source>Zero</source>
-        <translation type="unfinished"></translation>
+        <translation>Nul</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="419"/>
         <source>Negative</source>
-        <translation type="unfinished"></translation>
+        <translation>Negatief</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="429"/>
         <source>Overflow</source>
-        <translation type="unfinished"></translation>
+        <translation>Overflow</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="456"/>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
         <source>Breakpoints</source>
-        <translation type="unfinished"></translation>
+        <translation>Breekpunten</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="494"/>
         <source>Enable &amp;breakpoints</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Breekpunten inschakelen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="572"/>
         <source>&amp;New</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nieuw</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="575"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="578"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="587"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Openen...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="590"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="599"/>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Op&amp;slaan</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="602"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="611"/>
         <source>Save &amp;As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan &amp;als...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="620"/>
         <source>&amp;Compile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Compileren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="623"/>
         <source>Ctrl+F7</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+F7</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="632"/>
         <source>&amp;Run</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoe&amp;ren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="635"/>
         <source>Ctrl+F5</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+F5</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="644"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Afsluiten</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="653"/>
         <source>&amp;Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Enkele
+in&amp;structie</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="656"/>
         <source>F5</source>
-        <translation type="unfinished"></translation>
+        <translation>F5</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="661"/>
         <source>About &amp;QPasm...</source>
-        <translation type="unfinished"></translation>
+        <translation>Over &amp;QPasm...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="664"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="673"/>
         <source>&amp;Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ongedaan
+maken</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="676"/>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="685"/>
         <source>&amp;Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>H&amp;erhalen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="688"/>
         <source>Ctrl+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Y</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="697"/>
         <source>&amp;Timed step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ui&amp;tvoeren
+met interval</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="706"/>
         <source>Cu&amp;t</source>
-        <translation type="unfinished"></translation>
+        <translation>Kni&amp;ppen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="709"/>
         <source>Ctrl+X</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+X</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="718"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kopiëren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="721"/>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="730"/>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>P&amp;lakken</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="733"/>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+V</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="742"/>
         <source>S&amp;top</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;toppen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="751"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Pauzeren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="754"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="763"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>In&amp;stellingen</translation>
     </message>
 </context>
 </TS>

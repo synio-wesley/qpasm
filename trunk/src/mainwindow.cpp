@@ -179,8 +179,17 @@ void MainWindow::updateColorScheme() {
 }
 
 void MainWindow::changeEvent(QEvent *event) {
-    if (event->type() == QEvent::PaletteChange)
+    QMainWindow::changeEvent(event);
+    switch (event->type()) {
+    case QEvent::PaletteChange:
         updatePalette();
+        break;
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this); // Retranslate the user interface on-the-fly
+        break;
+    default:
+        break;
+    }
 }
 
 void MainWindow::updatePalette() {
@@ -791,7 +800,7 @@ void MainWindow::on_actionOpen_triggered() {
             changedSinceCompile = true;
             pasm_reset();
         } else {
-            QMessageBox::critical(this, tr("Could not open file"), tr("Could not open the file. The file couldn't be opened. Please check your permissions."),
+            QMessageBox::critical(this, tr("Could not open file"), tr("The file couldn't be opened. Please check your permissions."),
                                   QMessageBox::Ok);
         }
     }

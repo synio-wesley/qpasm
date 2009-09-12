@@ -26,7 +26,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     QDialog(parent),
     m_ui(new Ui::AboutDialog) {
     m_ui->setupUi(this);
-    m_ui->labelVersion->setText(tr("<span style=\"font-size: 14pt;\">QPasm version %1</span> (LibPASM %2)").arg(VERSION_STRING, VERSION_STRING));
+    m_ui->labelVersion->setText(tr("<span style=\"font-size: 14pt;\">QPasm %1</span> (LibPASM %2)").arg(VERSION_STRING, VERSION_STRING));
     m_ui->labelAbout->setText(tr("QPasm is a graphical frontend for the PASM pseudo assembler library. You can write, compile, run and debug simple assembler programs with this application.") +
                               "<br /><br /><strong>" + tr("Developer:") + "</strong><br />" + "&nbsp;&nbsp;<em>Wesley Stessens</em> (<a href=\"mailto:wesley@ubuntu.com\">wesley@ubuntu.com</a>)" +
                               "<br /><strong>" + tr("Mac OS X maintainer:") + "</strong><br />" + "&nbsp;&nbsp;<em>Rutger Bevers</em> (<a href=\"mailto:rutger.bevers@gmail.com\">rutger.bevers@gmail.com</a>)" +
@@ -37,6 +37,8 @@ AboutDialog::AboutDialog(QWidget *parent) :
                                        "QPasm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A "
                                        "PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.\n\n"
                                        "You should have received a copy of the GNU Lesser General Public License along with QPasm. If not, see <http://www.gnu.org/licenses/>."));
+    m_ui->translatorsText->setText(tr("The following people have translated QPasm into other languages:") + "<br /><br />" +
+                                   "<span style=\"font-size: 16px;\">" + tr("Dutch") + "</span>" + "<ul style=\"margin-top: 0px;\"><li><strong>cumulus007</strong>&nbsp;(<a href=\"mailto:cumulus0007@gmail.com\">cumulus0007@gmail.com</a>)</li></ul>");
     setFixedSize(sizeHint());
 }
 
