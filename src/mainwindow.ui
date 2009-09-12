@@ -107,7 +107,7 @@
           </column>
           <column>
            <property name="text">
-            <string>Command</string>
+            <string>Instruction</string>
            </property>
           </column>
          </widget>
@@ -301,7 +301,7 @@ font-style: italic;</string>
           <string notr="true"/>
          </property>
          <property name="text">
-          <string/>
+          <string notr="true">0</string>
          </property>
          <property name="readOnly">
           <bool>true</bool>
@@ -347,7 +347,7 @@ font-style: italic;</string>
          <item row="0" column="1">
           <widget class="QLineEdit" name="lineRegA">
            <property name="text">
-            <string/>
+            <string notr="true">0</string>
            </property>
            <property name="maxLength">
             <number>32767</number>
@@ -370,7 +370,7 @@ font-style: italic;</string>
          <item row="1" column="1">
           <widget class="QLineEdit" name="lineRegB">
            <property name="text">
-            <string/>
+            <string notr="true">0</string>
            </property>
            <property name="maxLength">
             <number>32767</number>
