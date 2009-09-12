@@ -36,6 +36,7 @@ class Highlighter;
 class QTimer;
 class PasmThread;
 class QLabel;
+class QTranslator;
 
 namespace Ui {
     class MainWindowClass;
@@ -84,6 +85,8 @@ private:
     QList<int> bpList;
     QByteArray defaultLayout;
     int timedStepInterval;
+    QString nameFilter;
+    QTranslator *translator;
 
 protected:
     void changeEvent(QEvent *event);

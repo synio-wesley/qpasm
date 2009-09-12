@@ -43,4 +43,5 @@ FORMS += mainwindow.ui \
     addmemdialog.ui \
     configdialog.ui
 RESOURCES += qpasm.qrc
-CONFIG += debug
+TRANSLATIONS += translations/qpasm_nl.ts
+CONFIG += release
