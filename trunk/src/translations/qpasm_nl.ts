@@ -56,11 +56,6 @@
 QPasm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License along with QPasm. If not, see &lt;http://www.gnu.org/licenses/&gt;.</source>
-        <oldsource>QPasm is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-QPasm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with QPasm. If not, see &lt;http://www.gnu.org/licenses/&gt;.</oldsource>
         <translation>QPasm is vrije software; u kunt het verspreiden en/of wijzigen onder de voorwaarden van de GNU Lesser General Public License, zoals uitgegeven door de Free Software Foundation; oftewel versie 3 van de licentie, of (naar vrije keuze) een latere versie.
 
 QPasm wordt verspreid in de hoop dat het nuttig zal zijn maar ZONDER ENIGE GARANTIE; zelfs zonder de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU Lesser General Public License voor meer details.
@@ -399,7 +394,6 @@ U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben
     <message>
         <location filename="../mainwindow.cpp" line="57"/>
         <source>Assembler programs</source>
-        <oldsource>Assembler programs (*.asm);;All files (*)</oldsource>
         <translation>Assembler-programma&apos;s</translation>
     </message>
     <message>
