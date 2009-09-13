@@ -31,7 +31,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
                               "<br /><br /><strong>" + tr("Developer:") + "</strong><br />" + "&nbsp;&nbsp;<em>Wesley Stessens</em> (<a href=\"mailto:wesley@ubuntu.com\">wesley@ubuntu.com</a>)" +
                               "<br /><strong>" + tr("Mac OS X maintainer:") + "</strong><br />" + "&nbsp;&nbsp;<em>Rutger Bevers</em> (<a href=\"mailto:rutger.bevers@gmail.com\">rutger.bevers@gmail.com</a>)" +
                               "<br /><strong>" + tr("Icons:") + "</strong><br />" + "&nbsp;&nbsp;<em>LGPL icons by Oxygen Team</em> (<a href=\"http://www.oxygen-icons.com\">www.oxygen-icons.com</a>)" +
-                              "<br /><p align=\"center\"><em>" + tr("Developed for the course CPS/ICCS at Hasselt University") + "<br />&copy; 2009 Wesley Stessens</em></p>");
+                              "<br /><p align=\"center\"><em>" + tr("Developed for the course CPS/ICCS at Hasselt University") + "<br />&copy; Copyright 2009 Wesley Stessens</em></p>");
     m_ui->licenseText->setPlainText(tr("QPasm is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, "
                                        "either version 3 of the License, or (at your option) any later version.\n\n"
                                        "QPasm is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A "
