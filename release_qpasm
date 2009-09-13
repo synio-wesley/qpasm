@@ -1,0 +1,50 @@
+#!/bin/sh
+if [ -z $1 ]; then
+    echo "You need to provide a version number!"
+else
+    cd ..
+    rm -Rf qpasm_$1_src
+    mkdir qpasm_$1_src
+    cp -Rf qpasm/asm_examples qpasm_$1_src/
+    cp -Rf qpasm/src qpasm_$1_src/
+    find qpasm_$1_src/ -type d -name ".svn" -exec rm -Rf {} \; 2> /dev/null
+    find qpasm_$1_src/ -type f -name "*~" -exec rm -Rf {} \;
+    cd qpasm_$1_src/src/
+    make distclean > /dev/null
+    rm -f config.ini diff qpasm.pro.user
+    cd ../../
+    rm -f qpasm_$1_src.tar.bz2
+    tar jcvf qpasm_$1_src.tar.bz2 qpasm_$1_src/ > /dev/null
+    echo "Created source package ../qpasm_$1_src.tar.bz2"
+    cd qpasm_$1_src/src/
+    /opt/qtsdk-2009.03/qt/bin/qmake
+    make > /dev/null
+    if [ ! -f qpasm ]; then
+        echo "Could not create binary package for Linux!"
+    else
+        mkdir qpasm_$1
+        cp README COPYING qpasm_$1/
+        cp qpasm qpasm_$1/qpasm.bin
+        cp /opt/qtsdk-2009.03/lib/libQtCore.so.4.5.2 qpasm_$1/libQtCore.so.4
+        cp /opt/qtsdk-2009.03/lib/libQtGui.so.4.5.2 qpasm_$1/libQtGui.so.4
+        cat > qpasm_$1/qpasm << EOF
+#!/bin/sh
+appname=qpasm.bin
+dirname=\`dirname \$0\`
+tmp="\${dirname#?}"
+if [ "\${dirname%\$tmp}" != "/" ]; then
+    dirname=\$PWD/\$dirname
+fi
+LD_LIBRARY_PATH=\$dirname
+export LD_LIBRARY_PATH
+\$dirname/\$appname \$*
+EOF
+        chmod +x qpasm_$1/qpasm
+        tar jcvf qpasm_$1.tar.bz2 qpasm_$1/ > /dev/null
+        rm -f ../../qpasm_$1_src.tar.bz2
+        mv qpasm_$1.tar.bz2 ../../
+        echo "Created binary Linux package ../qpasm_$1.tar.bz2"
+    fi
+    cd ../../
+    rm -Rf qpasm_$1_src
+fi
