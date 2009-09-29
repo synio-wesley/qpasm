@@ -12,7 +12,7 @@ Both LibPASM and QPasm are being developed by Wesley Stessens.
 
 QPasm implements the same basic pseudo-assembler language as the one being taught in the first year at Hasselt University in the course "Computer systems". The only difference is that the implemented language in QPasm also supports labels to make programming easier.
 
-QPasm is primarily meant to be a replacement for the older (and buggy) SCASM which is currently being used for the course. 
+QPasm is primarily used as a replacement for the older SCASM which was used for the course before.
 
 = Features =
 
