@@ -38,6 +38,14 @@ TextEdit::TextEdit(QWidget *parent) : QTextEdit(parent) {
 
 void TextEdit::setCurrentLine(int line) {
     currentLine = line;
+    if (line >= 0 && line < document()->blockCount()) {
+        QTextBlock block = document()->findBlockByNumber(line);
+        QRectF boundingRect = document()->documentLayout()->blockBoundingRect(block);
+        QPointF position = boundingRect.topLeft();
+        int verticalScroll = verticalScrollBar()->value();
+        if (position.y() < verticalScroll || position.y() + boundingRect.height() > verticalScroll + viewport()->height())
+            verticalScrollBar()->setValue(position.y());
+    }
     update();
     viewport()->update();
 }
@@ -71,7 +79,7 @@ void TextEdit::paintEvent(QPaintEvent *e) {
                     grad.setColorAt(0, QColor(0, 0, 255, this->palette().base().color().value() < 128 ? 85 : 35));
                     grad.setColorAt(1, QColor(0, 0, 255, 8));
                 }
-                p.fillRect(boundingRect, grad);
+                p.fillRect(boundingRect.translated(0, -verticalScroll), grad);
                 p.end();
                 break;
             }

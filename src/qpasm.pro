@@ -45,3 +45,4 @@ FORMS += mainwindow.ui \
 RESOURCES += qpasm.qrc
 TRANSLATIONS += translations/qpasm_nl.ts
 CONFIG += release
+

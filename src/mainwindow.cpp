@@ -605,6 +605,7 @@ void MainWindow::on_actionStep_triggered() {
 void MainWindow::setTimedStepInterval(int msec) {
     if (timer)
         timer->setInterval(msec);
+    timedStepInterval = msec;
     QSettings settings("config.ini", QSettings::IniFormat, this);
     settings.setValue("timedStepInterval", msec);
 }
