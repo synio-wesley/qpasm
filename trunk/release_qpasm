@@ -12,21 +12,25 @@ else
     cd qpasm_$1_src/src/
     make distclean > /dev/null
     rm -f config.ini diff qpasm.pro.user
+    lrelease qpasm.pro > /dev/null
     cd ../../
     rm -f qpasm_$1_src.tar.bz2
     tar jcvf qpasm_$1_src.tar.bz2 qpasm_$1_src/ > /dev/null
     echo "Created source package ../qpasm_$1_src.tar.bz2"
     cd qpasm_$1_src/src/
-    /opt/qtsdk-2009.03/qt/bin/qmake
+    qmake
     make > /dev/null
     if [ ! -f qpasm ]; then
         echo "Could not create binary package for Linux!"
     else
         mkdir qpasm_$1
-        cp README COPYING qpasm_$1/
+        cp README COPYING COPYING.LESSER qpasm_$1/
         cp qpasm qpasm_$1/qpasm.bin
-        cp /opt/qtsdk-2009.03/lib/libQtCore.so.4.5.2 qpasm_$1/libQtCore.so.4
-        cp /opt/qtsdk-2009.03/lib/libQtGui.so.4.5.2 qpasm_$1/libQtGui.so.4
+        touch qpasm_$1/config.ini
+        cp /usr/lib/libQtCore.so.4 qpasm_$1/libQtCore.so.4
+        cp /usr/lib/libQtGui.so.4 qpasm_$1/libQtGui.so.4
+        mkdir qpasm_$1/translations
+        cp translations/*.qm qpasm_$1/translations/
         cat > qpasm_$1/qpasm << EOF
 #!/bin/sh
 appname=qpasm.bin
@@ -41,7 +45,7 @@ export LD_LIBRARY_PATH
 EOF
         chmod +x qpasm_$1/qpasm
         tar jcvf qpasm_$1.tar.bz2 qpasm_$1/ > /dev/null
-        rm -f ../../qpasm_$1_src.tar.bz2
+        rm -f ../../qpasm_$1.tar.bz2
         mv qpasm_$1.tar.bz2 ../../
         echo "Created binary Linux package ../qpasm_$1.tar.bz2"
     fi
