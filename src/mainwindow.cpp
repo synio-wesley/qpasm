@@ -37,6 +37,8 @@
 #include <QSettings>
 #include <QTranslator>
 
+#include <QDebug>
+
 #define ADDRESS_ROLE Qt::UserRole
 #define VALUE_ROLE   Qt::UserRole + 1
 
@@ -128,12 +130,16 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::loadSettings() {
-    QSettings settings("config.ini", QSettings::IniFormat, this);
+    QString filename = fullConfigPath("config.ini");
+    QSettings settings(filename, QSettings::IniFormat, this);
 
+    // Read translation
     QString locale = settings.value("language", QLocale::system().name()).toString();
-    translator->load(QString("translations/qpasm_") + locale);
+    filename = fullConfigPath(QString("translations/")) + "qpasm_" + locale;
+    translator->load(filename);
     qApp->installTranslator(translator);
 
+    // Read other settings
     restoreState(settings.value("state", QByteArray()).toByteArray());
     restoreGeometry(settings.value("geometry", QByteArray()).toByteArray());
     timedStepInterval = settings.value("timedStepInterval", 500).toInt();
@@ -148,21 +154,33 @@ void MainWindow::restoreDefaultLayout() {
     restoreState(defaultLayout);
 }
 
+QString MainWindow::fullConfigPath(const QString &file) {
+    if (QFile::exists(file))
+        return file;
+    else {
+#ifdef Q_OS_LINUX
+        return QDir::homePath() + "/.qpasm/" + file;
+#else
+        return QDir::homePath() + "/qpasm/" + file;
+#endif
+    }
+}
+
 void MainWindow::saveLayout() {
-    QSettings settings("config.ini", QSettings::IniFormat, this);
+    QSettings settings(fullConfigPath("config.ini"), QSettings::IniFormat, this);
     settings.setValue("state", saveState());
     settings.setValue("geometry", saveGeometry());
 }
 
 void MainWindow::setEditorFont(const QFont &font) {
     ui->frameAsmCode->setNewFont(font);
-    QSettings settings("config.ini", QSettings::IniFormat, this);
+    QSettings settings(fullConfigPath("config.ini"), QSettings::IniFormat, this);
     settings.setValue("font", font);
     ui->frameAsmCode->textEdit()->setTabStopWidth(QFontMetrics(font).maxWidth() << 3 /* fm.maxWidth() * 8 */);
 }
 
 void MainWindow::updateColorScheme() {
-    QSettings settings("config.ini", QSettings::IniFormat, this);
+    QSettings settings(fullConfigPath("config.ini"), QSettings::IniFormat, this);
     QString scheme = settings.value("colorScheme", "automatic").toString();
     if (scheme == "custom") {
         QList<QVariant> defaultColors;
@@ -606,7 +624,7 @@ void MainWindow::setTimedStepInterval(int msec) {
     if (timer)
         timer->setInterval(msec);
     timedStepInterval = msec;
-    QSettings settings("config.ini", QSettings::IniFormat, this);
+    QSettings settings(fullConfigPath("config.ini"), QSettings::IniFormat, this);
     settings.setValue("timedStepInterval", msec);
 }
 

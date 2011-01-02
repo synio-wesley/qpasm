@@ -70,6 +70,7 @@ private:
     bool saveFile(const QString &fileName);
     bool handleUnsavedDocument();
     bool handleCodeMemSync();
+    static QString fullConfigPath(const QString &file);
     Ui::MainWindowClass *ui; ///< Elements in the user interface are accessible through this
     QtSignalBridge *signalBridge; ///< The signalbridge generates Qt signals from the PASM library so the user interface knows what to do
     QHash<uint32_t, QTableWidgetItem*> memoryTableMap; ///< Addresses are mapped to their specific table widget item
