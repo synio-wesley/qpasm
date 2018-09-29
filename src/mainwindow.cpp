@@ -36,6 +36,8 @@
 #include <QCloseEvent>
 #include <QSettings>
 #include <QTranslator>
+#include <QSpinBox>
+#include <QPushButton>
 
 #include <QDebug>
 
@@ -404,12 +406,49 @@ void MainWindow::showErrorMessage(ErrorCode error) {
         QMessageBox::critical(this, tr("Error occured"),
                               "<strong>" + tr("An error has occured:") + "</strong><br />" + errorMessage);
 }
-
+/*
 void MainWindow::readInput() {
     int input = QInputDialog::getInt(this, tr("Input required"),
                                      tr("The assembler program requests input from the user:"),
                                      0, MIN_SIGNED_NEGATIVE_32BIT_NUMBER, MAX_SIGNED_POSITIVE_32BIT_NUMBER);
     pasm_setInput(input);
+}*/
+
+void MainWindow::readInput() {
+    QDialog* dialog = new QDialog();
+    dialog->setModal(false);
+    QVBoxLayout *vLayout = new QVBoxLayout;
+    QHBoxLayout *hLayout = new QHBoxLayout;
+    QLabel *label = new QLabel;
+    label->setText(tr("Input Required"));
+    QSpinBox *spinbox = new QSpinBox();
+    spinbox->setValue(0);
+    QPushButton *okButton = new QPushButton("Confirm");
+    QPushButton *stopButton = new QPushButton("Stop simulation");
+    connect(okButton, SIGNAL (clicked()), dialog, SLOT(accept()));
+    //connect(stopButton, SIGNAL (clicked()), this, SLOT(on_actionStop_triggered()));
+    connect(stopButton, SIGNAL (clicked()), dialog, SLOT(reject()));
+    vLayout->addWidget(label);
+    vLayout->addLayout(hLayout);
+    hLayout->addWidget(spinbox);
+    hLayout->addWidget(okButton);
+    hLayout->addWidget(stopButton);
+    dialog->setLayout(vLayout);
+
+
+    if (dialog->exec()){
+        pasm_setInput(spinbox->value());
+    } else {
+        on_actionStop_triggered();
+        reportProgramEnded();
+    }
+
+
+/*    int input = dialog->getInt(this, tr("Input required"),
+                                     tr("The assembler program requests input from the user:"),
+                                     0, MIN_SIGNED_NEGATIVE_32BIT_NUMBER, MAX_SIGNED_POSITIVE_32BIT_NUMBER);
+                                     */
+    delete dialog;
 }
 
 void MainWindow::showOutput(int32_t value) {
