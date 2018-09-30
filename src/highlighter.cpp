@@ -40,14 +40,14 @@ void Highlighter::setColorScheme(const QString &scheme) {
 
     if (scheme != "custom" || colors.size() < 8) {
         colors.clear();
-        colors << (darkBg ? QColor(Qt::darkBlue).lighter(320) : Qt::darkBlue);
-        colors << (darkBg ? Qt::lightGray : Qt::darkGray);
-        colors << (darkBg ? QColor(Qt::darkRed).lighter(280) : Qt::darkRed);
-        colors << (darkBg ? QColor(Qt::darkYellow).lighter(280) : Qt::darkYellow);
-        colors << (darkBg ? QColor(Qt::darkMagenta).lighter(280) : Qt::darkMagenta);
-        colors << (darkBg ? QColor(Qt::darkGreen).lighter(280) : Qt::darkGreen);
-        colors << (darkBg ? Qt::white : Qt::darkCyan);
-        colors << (darkBg ? QColor(Qt::darkCyan).lighter(340) : Qt::blue);
+        colors << QVariant::fromValue((darkBg ? QColor(Qt::darkBlue).lighter(320) : Qt::darkBlue));
+        colors << QVariant::fromValue((darkBg ? Qt::lightGray : Qt::darkGray));
+        colors << QVariant::fromValue((darkBg ? QColor(Qt::darkRed).lighter(280) : Qt::darkRed));
+        colors << QVariant::fromValue((darkBg ? QColor(Qt::darkYellow).lighter(280) : Qt::darkYellow));
+        colors << QVariant::fromValue((darkBg ? QColor(Qt::darkMagenta).lighter(280) : Qt::darkMagenta));
+        colors << QVariant::fromValue((darkBg ? QColor(Qt::darkGreen).lighter(280) : Qt::darkGreen));
+        colors << QVariant::fromValue((darkBg ? Qt::white : Qt::darkCyan));
+        colors << QVariant::fromValue((darkBg ? QColor(Qt::darkCyan).lighter(340) : Qt::blue));
     }
     rehighlight();
 }

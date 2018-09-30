@@ -49,7 +49,7 @@ void pasm_addError(ErrorCode type, uint32_t address, const char *symbol) {
         pasm_error(HOST_MEMORY_EXHAUSTED);
         cancel = _TRUE;
     } else {
-        if (type == INVALID_MEMORY_REGION || type == DIVISION_BY_ZERO || type == OVERFLOW) {
+        if (type == INVALID_MEMORY_REGION || type == DIVISION_BY_ZERO || type == ERR_OVERFLOW) {
             error->address = address;
             error->symbol = NULL;
         } else if (type == UNRESOLVABLE_SYMBOL) {

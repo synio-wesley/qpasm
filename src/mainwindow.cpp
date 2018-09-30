@@ -71,6 +71,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->actionPause->setEnabled(false);
     ui->actionStop->setEnabled(false);
 
+    // Set up user input dialog
+    inputDialog = new QInputDialog(this);
+    QObject::connect(inputDialog, SIGNAL(finished(int)), this, SLOT(processUserInput(int)));
+
     // Initialize PASM library and set up a thread to run assembly programs
     pasm_init();
     qRegisterMetaType<uint32_t>("uint32_t");
@@ -386,7 +390,7 @@ void MainWindow::showErrorMessage(ErrorCode error) {
             if (errorInfo)
                 pasm_freeError(errorInfo);
             break;
-        case OVERFLOW:
+        case ERR_OVERFLOW:
             errorInfo = pasm_popError();
             errorMessage = tr("<strong>Warning:</strong> overflow caused by instruction at address %1.").arg(errorInfo ? QString::number(errorInfo->address) : "?");
             ui->textOutput->append(errorMessage);
@@ -406,10 +410,25 @@ void MainWindow::showErrorMessage(ErrorCode error) {
 }
 
 void MainWindow::readInput() {
-    int input = QInputDialog::getInt(this, tr("Input required"),
-                                     tr("The assembler program requests input from the user:"),
-                                     0, MIN_SIGNED_NEGATIVE_32BIT_NUMBER, MAX_SIGNED_POSITIVE_32BIT_NUMBER);
-    pasm_setInput(input);
+    inputDialog->setWindowTitle(tr("Input required"));
+    inputDialog->setLabelText(tr("The assembler program requests input from the user:"));
+    inputDialog->setInputMode(QInputDialog::IntInput);
+    inputDialog->setIntMinimum(MIN_SIGNED_NEGATIVE_32BIT_NUMBER);
+    inputDialog->setIntMaximum(MAX_SIGNED_POSITIVE_32BIT_NUMBER);
+    inputDialog->setModal(false);
+    inputDialog->setIntValue(0);
+    inputDialog->setOkButtonText(tr("Set value"));
+    inputDialog->setCancelButtonText(tr("Quit program"));
+    inputDialog->show();
+}
+
+void MainWindow::processUserInput(int dialogResult) {
+    if (dialogResult == QDialog::Accepted) {
+        int input = inputDialog->intValue();
+        pasm_setInput(input);
+    } else {
+        on_actionStop_triggered();
+    }
 }
 
 void MainWindow::showOutput(int32_t value) {
@@ -431,6 +450,7 @@ void MainWindow::reportProgramStarted() {
 }
 
 void MainWindow::reportProgramEnded() {
+    inputDialog->close();
     ui->actionCompile->setEnabled(true);
     ui->actionStep->setEnabled(true);
     ui->actionTimedStep->setEnabled(true);

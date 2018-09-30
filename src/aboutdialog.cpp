@@ -20,7 +20,7 @@
 #include "aboutdialog.h"
 #include "ui_aboutdialog.h"
 
-#define VERSION_STRING "1.1"
+#define VERSION_STRING "1.2"
 
 AboutDialog::AboutDialog(QWidget *parent) :
     QDialog(parent),
@@ -29,7 +29,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     m_ui->labelVersion->setText(tr("<span style=\"font-size: 14pt;\">QPasm %1</span> (LibPASM %2)").arg(VERSION_STRING, VERSION_STRING));
     m_ui->labelAbout->setText(tr("QPasm is a graphical frontend for the PASM pseudo assembler library. You can write, compile, run and debug simple assembler programs with this application.") +
                               "<br /><br /><strong>" + tr("Developer:") + "</strong><br />" + "&nbsp;&nbsp;<em>Wesley Stessens</em> (<a href=\"mailto:wesley@ubuntu.com\">wesley@ubuntu.com</a>)" +
-                              "<br /><strong>" + tr("Mac OS X maintainer:") + "</strong><br />" + "&nbsp;&nbsp;<em>Rutger Bevers</em> (<a href=\"mailto:rutger.bevers@gmail.com\">rutger.bevers@gmail.com</a>)" +
+                              "<br /><strong>" + tr("Thanks to:") + "</strong><br />" + "&nbsp;&nbsp;<em>GyroW</em> (<a href=\"https://github.com/GyroW\">GyroW @ GitHub</a>)" +
                               "<br /><strong>" + tr("Icons:") + "</strong><br />" + "&nbsp;&nbsp;<em>LGPL icons by Oxygen Team</em> (<a href=\"http://www.oxygen-icons.com\">www.oxygen-icons.com</a>)" +
                               "<br /><p align=\"center\"><em>" + tr("Developed for the course CPS/ICCS at Hasselt University") + "<br />&copy; Copyright 2009 Wesley Stessens</em></p>");
     m_ui->licenseText->setPlainText(tr("QPasm is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, "

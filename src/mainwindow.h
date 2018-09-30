@@ -37,6 +37,7 @@ class QTimer;
 class PasmThread;
 class QLabel;
 class QTranslator;
+class QInputDialog;
 
 namespace Ui {
     class MainWindowClass;
@@ -88,6 +89,7 @@ private:
     int timedStepInterval;
     QString nameFilter;
     QTranslator *translator;
+    QInputDialog *inputDialog;
 
 protected:
     void changeEvent(QEvent *event);
@@ -121,6 +123,7 @@ private slots:
     void memItemChanged(QTableWidgetItem* item);
     void setSplitterOrientationHorizontal();
     void setSplitterOrientationVertical();
+    void processUserInput(int dialogResult);
 
     void on_flagZero_clicked();
     void on_flagNeg_clicked();

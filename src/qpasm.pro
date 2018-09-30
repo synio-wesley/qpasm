@@ -1,6 +1,8 @@
 # -------------------------------------------------
 # Project created by QtCreator 2009-04-16T12:19:54
 # -------------------------------------------------
+QT += core gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = qpasm
 TEMPLATE = app
 SOURCES += main.cpp \
@@ -45,4 +47,3 @@ FORMS += mainwindow.ui \
 RESOURCES += qpasm.qrc
 TRANSLATIONS += translations/qpasm_nl.ts
 CONFIG += release
-

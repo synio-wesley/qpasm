@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="nl_BE">
+<TS version="2.1" language="nl_BE">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -35,9 +35,13 @@
         <translation>Ontwikkelaar:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="32"/>
         <source>Mac OS X maintainer:</source>
-        <translation>Mac OS X maintainer:</translation>
+        <translation type="vanished">Mac OS X maintainer:</translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="32"/>
+        <source>Thanks to:</source>
+        <translation>Met dank aan:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="33"/>
@@ -179,14 +183,14 @@ U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben
         <translation>Aan thema aanpassen</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="57"/>
         <location filename="../configdialog.ui" line="131"/>
+        <location filename="../configdialog.cpp" line="57"/>
         <source>Light colors</source>
         <translation>Lichte kleuren</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="58"/>
         <location filename="../configdialog.ui" line="136"/>
+        <location filename="../configdialog.cpp" line="58"/>
         <source>Dark colors</source>
         <translation>Donkere kleuren</translation>
     </message>
@@ -254,250 +258,260 @@ U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="52"/>
+        <location filename="../mainwindow.cpp" line="54"/>
         <source>&amp;View</source>
         <translation>&amp;Beeld</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="55"/>
-        <location filename="../mainwindow.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="57"/>
+        <location filename="../mainwindow.cpp" line="735"/>
         <source>Untitled</source>
         <translation>Naamloos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="55"/>
-        <location filename="../mainwindow.cpp" line="539"/>
-        <location filename="../mainwindow.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="57"/>
+        <location filename="../mainwindow.cpp" line="577"/>
+        <location filename="../mainwindow.cpp" line="735"/>
         <source>Pseudo Assembler</source>
         <translation>Pseudo-assembler</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="304"/>
+        <location filename="../mainwindow.cpp" line="326"/>
         <source>Dynamic memory address</source>
         <translation>Dynamisch geheugenadres</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="304"/>
+        <location filename="../mainwindow.cpp" line="326"/>
         <source>Static memory address</source>
         <translation>Statisch geheugenadres</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="333"/>
+        <location filename="../mainwindow.cpp" line="355"/>
         <source>There&apos;s not enough memory available on your physical machine to perform the necessary operations.</source>
         <translation>Er is niet genoeg geheugen beschikbaar op uw computer om de benodigde handelingen uit te voeren.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="336"/>
+        <location filename="../mainwindow.cpp" line="358"/>
         <source>The assembler program contains an unsupported opcode.</source>
         <translation>Het assembler-programma bevat een niet ondersteunde opcode.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="339"/>
+        <location filename="../mainwindow.cpp" line="361"/>
         <source>The assembler program contains an unsupported address mode.</source>
         <translation>Het assembler-programma bevat een niet ondersteunde adresmodus.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="342"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Frontend tried to register an unsupported callback type.</source>
         <translation>Frontend probeerde een niet ondersteund callback-type te registreren.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="345"/>
+        <location filename="../mainwindow.cpp" line="367"/>
         <source>An operand was required for one of the instructions but was not given.</source>
         <translation>Er was een operand nodig voor één van de instructies, maar die was niet opgegeven.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="349"/>
+        <location filename="../mainwindow.cpp" line="371"/>
         <source>The assembler program tried to access an invalid memory region (memory address %1)</source>
         <translation>Het assembler-programma probeerde toegang te krijgen tot een ongeldig geheugengebied (geheugenadres %1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="355"/>
+        <location filename="../mainwindow.cpp" line="377"/>
         <source>Call stack underflow. There&apos;s no address to return to.</source>
         <translation>Call stack underflow. Er is geen adres om naar terug te keren.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="359"/>
+        <location filename="../mainwindow.cpp" line="381"/>
         <source>Division by zero cannot be done. Assembler program tried to divide by zero during execution of instruction at address %1.</source>
         <translation>Door nul delen kan niet. Assembler-programma probeerde door nul te delen tijdens uitvoering van instructie op adres %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="388"/>
         <source>The symbol &lt;strong&gt;%1&lt;/strong&gt; which was encountered at line %2 couldn&apos;t be resolved.</source>
         <translation>Het symbool &lt;strong&gt;%1&lt;/strong&gt; dat werd tegengekomen op regel %2 kon niet gevonden worden.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="373"/>
+        <location filename="../mainwindow.cpp" line="395"/>
         <source>&lt;strong&gt;Warning:&lt;/strong&gt; overflow caused by instruction at address %1.</source>
         <translation>&lt;strong&gt;Waarschuwing:&lt;/strong&gt; overflow verzoorzaakt door instructie op adres %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="382"/>
+        <location filename="../mainwindow.cpp" line="404"/>
         <source>Unknown error</source>
         <translation>Onbekende fout</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>Error occured</source>
         <translation>Fout opgetreden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="387"/>
+        <location filename="../mainwindow.cpp" line="409"/>
         <source>An error has occured:</source>
         <translation>Er is een fout opgetreden:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="391"/>
+        <location filename="../mainwindow.cpp" line="413"/>
         <source>Input required</source>
         <translation>Invoer vereist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="414"/>
         <source>The assembler program requests input from the user:</source>
         <translation>Het assembler-programma verzoekt invoer van de gebruiker:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="420"/>
+        <source>Set value</source>
+        <translation>Waarde instellen</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="421"/>
+        <source>Quit program</source>
+        <translation>Programma stoppen</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="435"/>
         <source>Output:</source>
         <translation>Uitvoer:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="410"/>
+        <location filename="../mainwindow.cpp" line="447"/>
         <source>Program started.</source>
         <translation>Programma gestart.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="422"/>
+        <location filename="../mainwindow.cpp" line="460"/>
         <source>Program ended.</source>
         <translation>Programma beëindigd.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="452"/>
+        <location filename="../mainwindow.cpp" line="490"/>
         <source>line</source>
         <translation>regel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="453"/>
+        <location filename="../mainwindow.cpp" line="491"/>
         <source>column</source>
         <translation>kolom</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="521"/>
+        <location filename="../mainwindow.cpp" line="559"/>
         <source>Save as...</source>
         <translation>Opslaan als...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="803"/>
+        <location filename="../mainwindow.cpp" line="842"/>
         <source>The file couldn&apos;t be opened. Please check your permissions.</source>
         <translation>Het bestand kon niet geopend worden. Controleer uw toegangsrechten.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="57"/>
+        <location filename="../mainwindow.cpp" line="59"/>
         <source>Assembler programs</source>
         <translation>Assembler-programma&apos;s</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="544"/>
+        <location filename="../mainwindow.cpp" line="582"/>
         <source>Could not save file</source>
         <translation>Kon bestand niet opslaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="544"/>
+        <location filename="../mainwindow.cpp" line="582"/>
         <source>Could not save the file. The file couldn&apos;t be opened or created. Please check your permissions.</source>
         <translation>Kon bestand niet opslaan. Het bestand kon niet geopend of aangemaakt worden. Controleer uw toegangsrechten.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="558"/>
+        <location filename="../mainwindow.cpp" line="596"/>
         <source>Unsaved document</source>
         <translation>Niet opgeslagen document</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="558"/>
+        <location filename="../mainwindow.cpp" line="596"/>
         <source>The current document has not been saved yet.</source>
         <translation>Het huidige document is nog niet opgeslagen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="575"/>
+        <location filename="../mainwindow.cpp" line="613"/>
         <source>Code has changed after last compile</source>
         <translation>Code is gewijzigd na laatste keer compileren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="575"/>
+        <location filename="../mainwindow.cpp" line="613"/>
         <source>The code has changed after the last compile. Do you want to recompile before running?</source>
         <translation>De code is gewijzigd nadat u voor de laatste keer gecompileerd heeft. Wilt u opnieuw compileren alvorens uit te voeren?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="768"/>
+        <location filename="../mainwindow.cpp" line="807"/>
         <source>Choose the assembler program that you want to open...</source>
         <translation>Kies het te openen assembler-programma...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="57"/>
+        <location filename="../mainwindow.cpp" line="59"/>
         <source>All files</source>
         <translation>Alle bestanden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="796"/>
+        <location filename="../mainwindow.cpp" line="835"/>
         <source>QPasm - Pseudo Assembler</source>
         <translation>QPasm - Pseudo-assembler</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="803"/>
+        <location filename="../mainwindow.cpp" line="842"/>
         <source>Could not open file</source>
         <translation>Kon bestand niet openen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="892"/>
+        <location filename="../mainwindow.cpp" line="931"/>
         <source>Switch values of memory addresses?</source>
         <translation>Waardes van geheugenadressen omwisselen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="../mainwindow.cpp" line="932"/>
         <source>The given memory address already exists. Would you like to switch the contents of both memory addresses?</source>
         <translation>Het opgegeven geheugenadres bestaat reeds. Wilt u de inhoud van beide geheugenadressen omwisselen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="902"/>
+        <location filename="../mainwindow.cpp" line="941"/>
         <source>Cannot delete static memory cell</source>
         <translation>Kan statische geheugencel niet verwijderen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="903"/>
+        <location filename="../mainwindow.cpp" line="942"/>
         <source>You copied the contents of a static memory cell to a new dynamic memory cell. Since static memory can&apos;t be deleted the static memory cell will be initialized with the value 0.</source>
         <translation>U heeft de inhoud van een statische geheugencel gekopieerd naar een nieuwe dynamische geheugencel. Aangezien statisch geheugen niet verwijderd kan worden, zal de cel geïnitialiseerd worden met de waarde 0.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="967"/>
+        <location filename="../mainwindow.cpp" line="1006"/>
         <source>Are you sure you want to delete the selected dynamic memory cell?</source>
         <translation>Weet u zeker dat u de geselecteerde dynamische geheugencel wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="969"/>
+        <location filename="../mainwindow.cpp" line="1008"/>
         <source>Can&apos;t delete static memory cells. Do you want to set the selected static memory cell to 0?</source>
         <translation>Kan statische geheugencellen niet verwijderen. Wilt u de waarde van de geselecteerde statische geheugencel instellen op 0?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="971"/>
+        <location filename="../mainwindow.cpp" line="1010"/>
         <source>Delete memory cell?</source>
         <translation>Geheugencel verwijderen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="979"/>
+        <location filename="../mainwindow.cpp" line="1018"/>
         <source>Clear all memory?</source>
         <translation>Geheugen leegmaken?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="979"/>
+        <location filename="../mainwindow.cpp" line="1018"/>
         <source>Do you want to delete all dynamic memory allocated and set the contents of all static memory to 0 for this assembler program?</source>
         <translation>Wilt u voor dit assembler-programma al het toegewezen dynamische geheugen wissen en de inhoud van al het statische geheugen instellen op 0?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1000"/>
+        <location filename="../mainwindow.cpp" line="1039"/>
         <source>Layout horizontally</source>
         <translation>Horizontale lay-out</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1001"/>
+        <location filename="../mainwindow.cpp" line="1040"/>
         <source>Layout vertically</source>
         <translation>Verticale lay-out</translation>
     </message>
@@ -505,304 +519,303 @@ U zou een kopie van de GNU Lesser General Public License ontvangen moeten hebben
 <context>
     <name>MainWindowClass</name>
     <message>
-        <location filename="../mainwindow.ui" line="14"/>
         <source>QPasm - Pseudo Assembler</source>
-        <translation>QPasm - Pseudo-assembler</translation>
+        <translation type="vanished">QPasm - Pseudo-assembler</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="35"/>
+        <location filename="../mainwindow.ui" line="32"/>
         <source>Code Editor</source>
         <translation>Code-editor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="65"/>
+        <location filename="../mainwindow.ui" line="62"/>
         <source>Memory</source>
         <translation>Geheugen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="90"/>
+        <location filename="../mainwindow.ui" line="87"/>
         <source>Address</source>
         <translation>Adres</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="95"/>
+        <location filename="../mainwindow.ui" line="92"/>
         <source>Dec Value</source>
         <translation>Dec. waarde</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="100"/>
+        <location filename="../mainwindow.ui" line="97"/>
         <source>Hex Value</source>
         <translation>Hex. waarde</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="105"/>
+        <location filename="../mainwindow.ui" line="102"/>
         <source>Bin Value</source>
         <translation>Bin. waarde</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="110"/>
+        <location filename="../mainwindow.ui" line="107"/>
         <source>Instruction</source>
         <translation>Instructie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="123"/>
-        <location filename="../mainwindow.ui" line="134"/>
-        <location filename="../mainwindow.ui" line="522"/>
-        <location filename="../mainwindow.ui" line="533"/>
+        <location filename="../mainwindow.ui" line="120"/>
+        <location filename="../mainwindow.ui" line="131"/>
+        <location filename="../mainwindow.ui" line="519"/>
+        <location filename="../mainwindow.ui" line="530"/>
         <source>...</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="158"/>
-        <location filename="../mainwindow.ui" line="557"/>
+        <location filename="../mainwindow.ui" line="155"/>
+        <location filename="../mainwindow.ui" line="554"/>
         <source>Clear</source>
         <translation>Leegmaken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="177"/>
+        <location filename="../mainwindow.ui" line="174"/>
         <source>toolBar</source>
         <translation>Werkbalk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="224"/>
+        <location filename="../mainwindow.ui" line="221"/>
         <source>&amp;File</source>
         <translation>&amp;Bestand</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="236"/>
+        <location filename="../mainwindow.ui" line="233"/>
         <source>&amp;Project</source>
         <translation>&amp;Project</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="248"/>
+        <location filename="../mainwindow.ui" line="245"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="254"/>
+        <location filename="../mainwindow.ui" line="251"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bewerken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="275"/>
+        <location filename="../mainwindow.ui" line="272"/>
         <source>Processor</source>
         <translation>Processor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="294"/>
+        <location filename="../mainwindow.ui" line="291"/>
         <source>Program counter</source>
         <translation>Programmateller</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="325"/>
+        <location filename="../mainwindow.ui" line="322"/>
         <source>Registers</source>
         <translation>Registers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="343"/>
+        <location filename="../mainwindow.ui" line="340"/>
         <source>A:</source>
         <translation>A:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="366"/>
+        <location filename="../mainwindow.ui" line="363"/>
         <source>B:</source>
         <translation>B:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="399"/>
+        <location filename="../mainwindow.ui" line="396"/>
         <source>Flags</source>
         <translation>Vlaggen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="409"/>
+        <location filename="../mainwindow.ui" line="406"/>
         <source>Zero</source>
         <translation>Nul</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="419"/>
+        <location filename="../mainwindow.ui" line="416"/>
         <source>Negative</source>
         <translation>Negatief</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="429"/>
+        <location filename="../mainwindow.ui" line="426"/>
         <source>Overflow</source>
         <translation>Overflow</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="456"/>
+        <location filename="../mainwindow.ui" line="453"/>
         <source>Output</source>
         <translation>Uitvoer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="484"/>
+        <location filename="../mainwindow.ui" line="481"/>
         <source>Breakpoints</source>
         <translation>Breekpunten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="494"/>
+        <location filename="../mainwindow.ui" line="491"/>
         <source>Enable &amp;breakpoints</source>
         <translation>&amp;Breekpunten inschakelen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="572"/>
+        <location filename="../mainwindow.ui" line="569"/>
         <source>&amp;New</source>
         <translation>&amp;Nieuw</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="575"/>
+        <location filename="../mainwindow.ui" line="572"/>
         <source>New</source>
         <translation>Nieuw</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="578"/>
+        <location filename="../mainwindow.ui" line="575"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="587"/>
+        <location filename="../mainwindow.ui" line="584"/>
         <source>&amp;Open...</source>
         <translation>&amp;Openen...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="590"/>
+        <location filename="../mainwindow.ui" line="587"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="599"/>
+        <location filename="../mainwindow.ui" line="596"/>
         <source>&amp;Save</source>
         <translation>Op&amp;slaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="602"/>
+        <location filename="../mainwindow.ui" line="599"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="611"/>
+        <location filename="../mainwindow.ui" line="608"/>
         <source>Save &amp;As...</source>
         <translation>Opslaan &amp;als...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="620"/>
+        <location filename="../mainwindow.ui" line="617"/>
         <source>&amp;Compile</source>
         <translation>&amp;Compileren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="623"/>
+        <location filename="../mainwindow.ui" line="620"/>
         <source>Ctrl+F7</source>
         <translation>Ctrl+F7</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="632"/>
+        <location filename="../mainwindow.ui" line="629"/>
         <source>&amp;Run</source>
         <translation>Uitvoe&amp;ren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="635"/>
+        <location filename="../mainwindow.ui" line="632"/>
         <source>Ctrl+F5</source>
         <translation>Ctrl+F5</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="644"/>
+        <location filename="../mainwindow.ui" line="641"/>
         <source>E&amp;xit</source>
         <translation>&amp;Afsluiten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="653"/>
+        <location filename="../mainwindow.ui" line="650"/>
         <source>&amp;Step</source>
         <translation>Enkele
 in&amp;structie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="656"/>
+        <location filename="../mainwindow.ui" line="653"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="661"/>
+        <location filename="../mainwindow.ui" line="658"/>
         <source>About &amp;QPasm...</source>
         <translation>Over &amp;QPasm...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="664"/>
+        <location filename="../mainwindow.ui" line="661"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="673"/>
+        <location filename="../mainwindow.ui" line="670"/>
         <source>&amp;Undo</source>
         <translation>&amp;Ongedaan
 maken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="676"/>
+        <location filename="../mainwindow.ui" line="673"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="685"/>
+        <location filename="../mainwindow.ui" line="682"/>
         <source>&amp;Redo</source>
         <translation>H&amp;erhalen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="688"/>
+        <location filename="../mainwindow.ui" line="685"/>
         <source>Ctrl+Y</source>
         <translation>Ctrl+Y</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="697"/>
+        <location filename="../mainwindow.ui" line="694"/>
         <source>&amp;Timed step</source>
         <translation>Ui&amp;tvoeren
 met interval</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="706"/>
+        <location filename="../mainwindow.ui" line="703"/>
         <source>Cu&amp;t</source>
         <translation>Kni&amp;ppen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="709"/>
+        <location filename="../mainwindow.ui" line="706"/>
         <source>Ctrl+X</source>
         <translation>Ctrl+X</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="718"/>
+        <location filename="../mainwindow.ui" line="715"/>
         <source>&amp;Copy</source>
         <translation>&amp;Kopiëren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="721"/>
+        <location filename="../mainwindow.ui" line="718"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="730"/>
+        <location filename="../mainwindow.ui" line="727"/>
         <source>&amp;Paste</source>
         <translation>P&amp;lakken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="733"/>
+        <location filename="../mainwindow.ui" line="730"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="742"/>
+        <location filename="../mainwindow.ui" line="739"/>
         <source>S&amp;top</source>
         <translation>S&amp;toppen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="751"/>
+        <location filename="../mainwindow.ui" line="748"/>
         <source>&amp;Pause</source>
         <translation>&amp;Pauzeren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="754"/>
+        <location filename="../mainwindow.ui" line="751"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="763"/>
+        <location filename="../mainwindow.ui" line="760"/>
         <source>&amp;Settings</source>
         <translation>In&amp;stellingen</translation>
     </message>

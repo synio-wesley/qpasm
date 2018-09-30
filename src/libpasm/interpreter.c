@@ -29,6 +29,7 @@ Register reg; /* Register of pseudo-assembler */
 CallStack callStack; /* Callstack of pseudo-assembler (needed for subroutines) */
 Boolean programRunning; /* Boolean to determine whether a pseudo-assembler program is running */
 Boolean programPaused;
+Boolean awaitingInput;
 Boolean completeRun;
 JumpMode jumpMode; /* Jump mode */
 uint32_t interpretedLineNumber;
@@ -301,7 +302,8 @@ ErrorCode pasm_interpretInstruction(Instruction instruction) {
             break;
         case INP:
             reg.overflowFlag = _FALSE;
-            programRunning = _FALSE; /* Pause the interpreter - needed when the frontend runs this library in a seperate thread */
+            programRunning = _FALSE; /* Pause the interpreter - needed when the frontend runs this library in a separate thread */
+            awaitingInput = _TRUE;
             pasm_performDelayedCallbacks(interpretedLineNumber);
             pasm_readInput();
             break;
@@ -313,8 +315,8 @@ ErrorCode pasm_interpretInstruction(Instruction instruction) {
             int64 = (int64_t)reg.a + reg.b;
             if (int64 > MAX_SIGNED_POSITIVE_32BIT_NUMBER || int64 < MIN_SIGNED_NEGATIVE_32BIT_NUMBER) {
                 reg.overflowFlag = _TRUE;
-                pasm_addError(OVERFLOW, reg.programCounter, NULL);
-                pasm_error(OVERFLOW);
+                pasm_addError(ERR_OVERFLOW, reg.programCounter, NULL);
+                pasm_error(ERR_OVERFLOW);
             }
             /*if (reg.a < 0 && reg.b < 0 && reg.a + reg.b > reg.a) // Experimental overflow detection which does not require a 64 bit int but has not been tested thoroughly
                 reg.overflowFlag = _TRUE;
@@ -327,8 +329,8 @@ ErrorCode pasm_interpretInstruction(Instruction instruction) {
             int64 = (int64_t)reg.a - reg.b;
             if (int64 > MAX_SIGNED_POSITIVE_32BIT_NUMBER || int64 < MIN_SIGNED_NEGATIVE_32BIT_NUMBER) {
                 reg.overflowFlag = _TRUE;
-                pasm_addError(OVERFLOW, reg.programCounter, NULL);
-                pasm_error(OVERFLOW);
+                pasm_addError(ERR_OVERFLOW, reg.programCounter, NULL);
+                pasm_error(ERR_OVERFLOW);
             }
             /*if (reg.a < 0 && reg.b >= 0 && reg.a - reg.b > reg.a) // Experimental overflow detection which does not require a 64 bit int but has not been tested thoroughly
                 reg.overflowFlag = _TRUE;
@@ -341,8 +343,8 @@ ErrorCode pasm_interpretInstruction(Instruction instruction) {
             int64 = (int64_t)reg.a * reg.b;
             if (int64 > MAX_SIGNED_POSITIVE_32BIT_NUMBER || int64 < MIN_SIGNED_NEGATIVE_32BIT_NUMBER) {
                 reg.overflowFlag = _TRUE;
-                pasm_addError(OVERFLOW, reg.programCounter, NULL);
-                pasm_error(OVERFLOW);
+                pasm_addError(ERR_OVERFLOW, reg.programCounter, NULL);
+                pasm_error(ERR_OVERFLOW);
             }
             reg.a *= reg.b;
             break;
@@ -350,8 +352,8 @@ ErrorCode pasm_interpretInstruction(Instruction instruction) {
             reg.overflowFlag = _FALSE;
             if (reg.a == MIN_SIGNED_NEGATIVE_32BIT_NUMBER && reg.b == -1) {
                 reg.overflowFlag = _TRUE;
-                pasm_addError(OVERFLOW, reg.programCounter, NULL);
-                pasm_error(OVERFLOW);
+                pasm_addError(ERR_OVERFLOW, reg.programCounter, NULL);
+                pasm_error(ERR_OVERFLOW);
             } else if (reg.b == 0) {
                 error = DIVISION_BY_ZERO;
                 pasm_addError(error, reg.programCounter, NULL);
@@ -406,6 +408,7 @@ static void pasm_updateRegister() {
 }
 
 void pasm_resumeInterpreter() {
+    awaitingInput = _FALSE;
     programRunning = _TRUE;
     pasm_performCurrentLineCallback(reg.programCounter);
     pasm_updateRegister();
@@ -455,6 +458,7 @@ ErrorCode pasm_compileProgram(const char *program, uint32_t size) {
 
     programRunning = _FALSE;
     programPaused = _FALSE;
+    awaitingInput = _FALSE;
     pasm_initRegister();
     pasm_performCallback(REGISTER_CHANGE);
 
@@ -532,10 +536,11 @@ void pasm_pauseProgram() {
 }
 
 void pasm_stopProgram() {
-    if (programRunning || programPaused) {
+    if (programRunning || programPaused || awaitingInput) {
         pasm_performDelayedCallbacks(interpretedLineNumber);
         programRunning = _FALSE;
         programPaused = _FALSE;
+        awaitingInput = _FALSE;
         pasm_performCallback(PROGRAM_END);
     }
     completeRun = _FALSE;

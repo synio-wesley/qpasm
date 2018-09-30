@@ -42,7 +42,7 @@ typedef enum {
     CALLSTACK_UNDERFLOW, /**< The pseudo-assembler program tried to return from a subroutine, but the callstack seems to be empty */
     DIVISION_BY_ZERO, /**< The pseudo-assembler program tried to divide the value in register A by zero */
     UNRESOLVABLE_SYMBOL, /**< A symbol couldn't be resolved */
-    OVERFLOW
+    ERR_OVERFLOW /**< An overflow has occured */
 } ErrorCode;
 
 typedef struct error {
