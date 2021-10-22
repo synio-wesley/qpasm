@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="qpasm.qrc">
-    <normaloff>:/res/img/configure.png</normaloff>:/res/img/configure.png</iconset>
+    <normaloff>:/res/img/configure.svg</normaloff>:/res/img/configure.svg</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>

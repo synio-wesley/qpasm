@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="qpasm.qrc">
-    <normaloff>:/res/img/qpasm.png</normaloff>:/res/img/qpasm.png</iconset>
+    <normaloff>:/res/img/qpasm.svg</normaloff>:/res/img/qpasm.svg</iconset>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -27,7 +27,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="qpasm.qrc">:/res/img/qpasm_logo.png</pixmap>
+      <pixmap resource="qpasm.qrc">:/res/img/qpasm_logo.svg</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
