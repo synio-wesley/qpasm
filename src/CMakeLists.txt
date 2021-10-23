@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(qpasm)
 
-find_package(Qt6 COMPONENTS Core Gui Svg REQUIRED)
+find_package(Qt6 COMPONENTS Core Gui Svg LinguistTools REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -61,9 +61,10 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON) 
 
-qt6_add_resources(SOURCES ${RESOURCES})
-
 add_executable(qpasm ${SOURCES} ${HEADERS} ${FORMS} ${RESOURCES})
+
+# TODO: translations
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
 target_link_libraries(qpasm PUBLIC Qt6::Core Qt6::Gui Qt6::Svg)

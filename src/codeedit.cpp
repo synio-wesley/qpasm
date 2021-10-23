@@ -137,7 +137,7 @@ void NumberingWidget::mouseReleaseEvent(QMouseEvent *e) {
 
     for (QTextBlock block = edit->document()->begin(); block.isValid(); block = block.next(), ++lineCount) {
         const QRectF boundingRect = edit->document()->documentLayout()->blockBoundingRect(block);
-        if (e->y() > height - verticalScroll && e->y() < height - verticalScroll + boundingRect.height()) {
+        if (e->position().y() > height - verticalScroll && e->position().y() < height - verticalScroll + boundingRect.height()) {
             emit lineClicked(lineCount);
             break;
         }

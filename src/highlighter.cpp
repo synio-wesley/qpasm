@@ -104,8 +104,7 @@ void Highlighter::highlightBlock(const QString &text) {
 }
 
 void Highlighter::apply(const QString &text, QTextCharFormat format, QRegularExpression& expression) {
-    QRegularExpressionMatch match;
-    text.indexOf(expression, 0, &match); // Try to match regular expression
+    QRegularExpressionMatch match = expression.match(text); // Try to match regular expression
 
     // Highlight label (blue color by default)
     if (match.capturedStart(2) >= 0) {

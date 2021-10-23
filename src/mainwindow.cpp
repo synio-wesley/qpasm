@@ -140,7 +140,9 @@ void MainWindow::loadSettings() {
     // Read translation
     QString locale = settings.value("language", QLocale::system().name()).toString();
     filename = fullConfigPath(QString("translations/")) + "qpasm_" + locale;
-    translator->load(filename);
+    if (!translator->load(filename)) {
+        qDebug() << "Warning: failed to load translation";
+    }
     qApp->installTranslator(translator);
 
     // Read other settings
