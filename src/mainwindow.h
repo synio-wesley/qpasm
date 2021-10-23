@@ -30,6 +30,7 @@
 #include "qtsignalbridge.h"
 #include <QMainWindow>
 #include <QTableWidgetItem>
+#include <optional>
 #include <stdint.h>
 
 class Highlighter;
@@ -68,7 +69,7 @@ public:
 private:
     void loadSettings();
     void saveLayout();
-    bool saveFile(const QString &fileName);
+    bool saveFile(const std::optional<QString> &fileName);
     bool handleUnsavedDocument();
     bool handleCodeMemSync();
     static QString fullConfigPath(const QString &file);

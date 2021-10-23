@@ -180,7 +180,7 @@ void MainWindow::setEditorFont(const QFont &font) {
     ui->frameAsmCode->setNewFont(font);
     QSettings settings(fullConfigPath("config.ini"), QSettings::IniFormat, this);
     settings.setValue("font", font);
-    ui->frameAsmCode->textEdit()->setTabStopWidth(QFontMetrics(font).maxWidth() << 3 /* fm.maxWidth() * 8 */);
+    ui->frameAsmCode->textEdit()->setTabStopDistance(QFontMetrics(font).maxWidth() << 3 /* fm.maxWidth() * 8 */);
 }
 
 void MainWindow::updateColorScheme() {
@@ -547,11 +547,11 @@ void MainWindow::nextLineToInterpret(uint32_t address) {
     QObject::connect(ui->tableMem, SIGNAL(itemChanged(QTableWidgetItem*)), this, SLOT(memItemChanged(QTableWidgetItem*)));
 }
 
-bool MainWindow::saveFile(const QString &fileName) {
-    QString saveAs = fileName;
+bool MainWindow::saveFile(const std::optional<QString> &fileName) {
+    QString saveAs = fileName.value_or("");
     bool cancel = false;
 
-    if (saveAs == NULL) {
+    if (!fileName.has_value()) {
         QDir directory;
         QFileDialog saveDialog(this);
         saveDialog.setDefaultSuffix("asm");
@@ -599,7 +599,7 @@ bool MainWindow::handleUnsavedDocument() {
         answer = QMessageBox::Discard;
 
     if (answer == QMessageBox::Save)
-        cancel = saveFile(NULL);
+        cancel = saveFile(std::nullopt);
     else if (answer == QMessageBox::Cancel)
         cancel = true;
     return cancel;
@@ -786,13 +786,13 @@ void MainWindow::setBreakpoint(uint32_t address, bool enabled) {
 
 void MainWindow::on_actionSave_triggered() {
     if (fileName.isEmpty())
-        saveFile(NULL);
+        saveFile(std::nullopt);
     else
         saveFile(fileName);
 }
 
 void MainWindow::on_actionSaveAs_triggered() {
-    saveFile(NULL);
+    saveFile(std::nullopt);
 }
 
 void MainWindow::on_actionOpen_triggered() {

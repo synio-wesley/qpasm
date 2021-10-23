@@ -19,6 +19,7 @@
 
 #include "highlighter.h"
 #include <QTextCursor>
+#include <QRegularExpression>
 
 Highlighter::Highlighter(QTextDocument *parent, QTextEdit *edit) : QSyntaxHighlighter(parent) {
     this->edit = edit;
@@ -54,26 +55,23 @@ void Highlighter::setColorScheme(const QString &scheme) {
 
 void Highlighter::highlightBlock(const QString &text) {
     QTextCharFormat format;
-    QRegExp expression;
+    // TODO: remove
     QString pattern;
-
-    expression.setCaseSensitivity(Qt::CaseInsensitive);
 
     // Operations to load or store data get a blue color (by default)
     format.setFontWeight(QFont::Bold);
     format.setForeground(colors.at(0).value<QColor>());
-    pattern = "^\\s*([A-Z_]*:\\s*)?(LDA|LDB)\\s+(#-?\\d+|\\(\\d+\\)|\\d+|(?:\\[[A-Z_]*\\]|\\(\\[[A-Z_]*\\]\\)))(?:\\s|$)";
-    expression.setPattern(pattern);
-    apply(text, format, expression);
-    pattern = "^\\s*([A-Z_]*:\\s*)?(STA|STB)\\s+(\\(\\d+\\)|\\d+|(?:\\[[A-Z_]*\\]|\\(\\[[A-Z_]*\\]\\)))(?:\\s|$)";
-    expression.setPattern(pattern);
-    apply(text, format, expression);
+    
+    QRegularExpression ldaLdbExpression("^\\s*([A-Z_]*:\\s*)?(LDA|LDB)\\s+(#-?\\d+|\\(\\d+\\)|\\d+|(?:\\[[A-Z_]*\\]|\\(\\[[A-Z_]*\\]\\)))(?:\\s|$)", QRegularExpression::CaseInsensitiveOption);
+    apply(text, format, ldaLdbExpression);
+
+    QRegularExpression staStbExpression("^\\s*([A-Z_]*:\\s*)?(STA|STB)\\s+(\\(\\d+\\)|\\d+|(?:\\[[A-Z_]*\\]|\\(\\[[A-Z_]*\\]\\)))(?:\\s|$)", QRegularExpression::CaseInsensitiveOption);
+    apply(text, format, staStbExpression);
 
     // Jump operations get a magenta color (by default)
     format.setFontWeight(QFont::Bold);
     format.setForeground(colors.at(4).value<QColor>());
-    pattern = "^\\s*([A-Z_]*:\\s*)?(?:(?:(JMP|JSP|JSN|JIZ|JOF|JSB)\\s+(\\d+|\\[[A-Z_]*\\]))|(RTS$|RTS\\s))";
-    expression.setPattern(pattern);
+    QRegularExpression expression("^\\s*([A-Z_]*:\\s*)?(?:(?:(JMP|JSP|JSN|JIZ|JOF|JSB)\\s+(\\d+|\\[[A-Z_]*\\]))|(RTS$|RTS\\s))", QRegularExpression::CaseInsensitiveOption);
     apply(text, format, expression);
 
     // An empty operation (NOP) gets a gray color (by default)
@@ -105,23 +103,24 @@ void Highlighter::highlightBlock(const QString &text) {
     apply(text, format, expression);
 }
 
-void Highlighter::apply(const QString &text, QTextCharFormat format, QRegExp expression) {
-    text.indexOf(expression); // Try to match regular expression
+void Highlighter::apply(const QString &text, QTextCharFormat format, QRegularExpression& expression) {
+    QRegularExpressionMatch match;
+    text.indexOf(expression, 0, &match); // Try to match regular expression
 
     // Highlight label (blue color by default)
-    if (expression.pos(2) >= 0) {
+    if (match.capturedStart(2) >= 0) {
         QTextCharFormat labelFormat;
         labelFormat.setFontWeight(QFont::Bold);
         labelFormat.setForeground(colors.at(7).value<QColor>());
-        setFormat(expression.pos(1), expression.cap(1).length(), labelFormat);
+        setFormat(match.capturedStart(1), match.captured(1).length(), labelFormat);
     }
 
     // Valid operands get a cyan or white color (by default)
     QTextCharFormat opFormat;
     opFormat.setFontWeight(QFont::Bold);
     opFormat.setForeground(colors.at(6).value<QColor>());
-    setFormat(expression.pos(3), expression.cap(3).length(), opFormat);
+    setFormat(match.capturedStart(3), match.captured(3).length(), opFormat);
 
     // Apply highlighting to operator
-    setFormat(expression.pos(2), expression.cap(2).length(), format);
+    setFormat(match.capturedStart(2), match.captured(2).length(), format);
 }

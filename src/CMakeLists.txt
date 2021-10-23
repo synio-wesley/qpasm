@@ -61,6 +61,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON) 
 
+add_compile_definitions(QT_DISABLE_DEPRECATED_BEFORE=0x050F00)
 qt5_add_resources(SOURCES ${RESOURCES})
 
 add_executable(qpasm ${SOURCES} ${HEADERS} ${FORMS} ${RESOURCES})

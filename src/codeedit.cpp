@@ -116,9 +116,9 @@ void NumberingWidget::paintEvent(QPaintEvent *e) {
         if (position.y() > verticalScroll + edit->viewport()->height())
             break;
         const QString txt = QString::number(lineCount);
-        neededWidth = qMax(neededWidth, fontMetrics().width(txt));
+        neededWidth = qMax(neededWidth, fontMetrics().horizontalAdvance(txt));
         p.setPen(QColor(150, 150, 150));
-        p.drawText(width() - fm.width(txt) - 4, qRound(position.y()) + fontMetrics().ascent() - verticalScroll + 1, txt);
+        p.drawText(width() - fm.horizontalAdvance(txt) - 4, qRound(position.y()) + fontMetrics().ascent() - verticalScroll + 1, txt);
         if (edit->breakpointList() && edit->breakpointList()->contains(lineCount)) {
             if (!edit->breakpointsEnabled())
                 p.setOpacity(0.4);
@@ -157,7 +157,7 @@ CodeEdit::CodeEdit(QWidget *parent) : QFrame(parent) {
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setSpacing(0);
-    layout->setMargin(0);
+    layout->setContentsMargins(0,0,0,0);
     layout->addWidget(numberingWidget);
     layout->addWidget(edit);
     setLayout(layout);
