@@ -139,7 +139,7 @@ void MainWindow::loadSettings() {
 
     // Read translation
     QString locale = settings.value("language", QLocale::system().name()).toString();
-    filename = fullConfigPath(QString("translations/")) + "qpasm_" + locale;
+    filename = fullConfigPath(QString(":i18n/")) + "qpasm_" + locale;
     if (!translator->load(filename)) {
         qDebug() << "Warning: failed to load translation";
     }

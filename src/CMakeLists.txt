@@ -64,6 +64,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 add_executable(qpasm ${SOURCES} ${HEADERS} ${FORMS} ${RESOURCES})
 
 # TODO: translations
+qt_add_translations(qpasm TS_FILES ${CMAKE_SOURCE_DIR}/translations/qpasm_nl.ts)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
