@@ -324,7 +324,7 @@ void MainWindow::updateMemoryInfo(uint32_t address, int32_t value) {
     }
 
     addressItem->setData(VALUE_ROLE, value);
-    addressItem->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.png" : ":/res/img/static-memory.png"));
+    addressItem->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.svg" : ":/res/img/static-memory.svg"));
     addressItem->setToolTip(pasm_isDynamicMemory(address) ? tr("Dynamic memory address") : tr("Static memory address"));
     valueDecItem->setData(Qt::DisplayRole, value);
     valueHexItem->setData(Qt::DisplayRole, QString("%1").arg(QString::number((unsigned int)value, 16), 8, '0'));
@@ -496,7 +496,7 @@ void MainWindow::updatePositionInfo() {
 void MainWindow::updateCurrentLineMarker() {
     if (nextToInterpret) {
         QPixmap pm(pasm_isDynamicMemory(nextToInterpret->data(ADDRESS_ROLE).toUInt()) ?
-                   ":/res/img/dynamic-memory.png" : ":/res/img/static-memory.png");
+                   ":/res/img/dynamic-memory.svg" : ":/res/img/static-memory.svg");
         QPainter p(&pm);
         p.setBrush(Qt::red);
         p.setPen(Qt::NoPen);
@@ -521,7 +521,7 @@ void MainWindow::nextLineToInterpret(uint32_t address) {
             valueBinItem = ui->tableMem->item(rowNum, 3);
             instructionItem = ui->tableMem->item(rowNum, 4);
             font.setBold(false);
-            nextToInterpret->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.png" : ":/res/img/static-memory.png"));
+            nextToInterpret->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.svg" : ":/res/img/static-memory.svg"));
             nextToInterpret->setFont(font);
             valueDecItem->setFont(font);
             valueHexItem->setFont(font);
