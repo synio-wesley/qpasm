@@ -122,7 +122,7 @@ void NumberingWidget::paintEvent(QPaintEvent *e) {
         if (edit->breakpointList() && edit->breakpointList()->contains(lineCount)) {
             if (!edit->breakpointsEnabled())
                 p.setOpacity(0.4);
-            p.drawPixmap(0, qRound(position.y()) - verticalScroll + 1, 16, 16, QPixmap(":/res/img/bp.png"));
+            p.drawPixmap(0, qRound(position.y()) - verticalScroll + 1, 16, 16, QPixmap(":/res/img/bp.svg"));
         }
         p.setOpacity(1.0);
     }
