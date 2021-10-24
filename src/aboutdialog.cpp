@@ -20,7 +20,7 @@
 #include "aboutdialog.h"
 #include "ui_aboutdialog.h"
 
-#define VERSION_STRING "1.3"
+#define VERSION_STRING "1.4"
 
 AboutDialog::AboutDialog(QWidget *parent) :
     QDialog(parent),
