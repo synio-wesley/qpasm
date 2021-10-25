@@ -53,7 +53,7 @@ private:
       * \param format Format of highlighting (color)
       * \param expression Expression that was matched
       */
-    void apply(const QString &text, QTextCharFormat format, QRegExp expression);
+    void apply(const QString &text, QTextCharFormat format, QRegularExpression& expression);
     QTextEdit *edit;
     bool darkBg;
     QList<QVariant> colors;

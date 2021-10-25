@@ -224,7 +224,9 @@ void ConfigDialog::on_pushLabels_clicked() {
 
 void ConfigDialog::changeLanguage(int index) {
     QString locale = m_ui->langBox->itemData(index, Qt::UserRole).toString();
-    translator->load(QString("translations/qpasm_") + locale);
+    if (!translator->load(QString(":i18n/qpasm_") + locale)) {
+        qDebug() << "Warning: failed to load translation";
+    }
     QSettings settings("config.ini", QSettings::IniFormat, this);
     settings.setValue("language", locale);
 }

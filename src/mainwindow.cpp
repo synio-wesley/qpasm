@@ -139,8 +139,10 @@ void MainWindow::loadSettings() {
 
     // Read translation
     QString locale = settings.value("language", QLocale::system().name()).toString();
-    filename = fullConfigPath(QString("translations/")) + "qpasm_" + locale;
-    translator->load(filename);
+    filename = fullConfigPath(QString(":i18n/")) + "qpasm_" + locale;
+    if (!translator->load(filename)) {
+        qDebug() << "Warning: failed to load translation";
+    }
     qApp->installTranslator(translator);
 
     // Read other settings
@@ -180,7 +182,7 @@ void MainWindow::setEditorFont(const QFont &font) {
     ui->frameAsmCode->setNewFont(font);
     QSettings settings(fullConfigPath("config.ini"), QSettings::IniFormat, this);
     settings.setValue("font", font);
-    ui->frameAsmCode->textEdit()->setTabStopWidth(QFontMetrics(font).maxWidth() << 3 /* fm.maxWidth() * 8 */);
+    ui->frameAsmCode->textEdit()->setTabStopDistance(QFontMetrics(font).maxWidth() << 3 /* fm.maxWidth() * 8 */);
 }
 
 void MainWindow::updateColorScheme() {
@@ -322,7 +324,7 @@ void MainWindow::updateMemoryInfo(uint32_t address, int32_t value) {
     }
 
     addressItem->setData(VALUE_ROLE, value);
-    addressItem->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.png" : ":/res/img/static-memory.png"));
+    addressItem->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.svg" : ":/res/img/static-memory.svg"));
     addressItem->setToolTip(pasm_isDynamicMemory(address) ? tr("Dynamic memory address") : tr("Static memory address"));
     valueDecItem->setData(Qt::DisplayRole, value);
     valueHexItem->setData(Qt::DisplayRole, QString("%1").arg(QString::number((unsigned int)value, 16), 8, '0'));
@@ -494,7 +496,7 @@ void MainWindow::updatePositionInfo() {
 void MainWindow::updateCurrentLineMarker() {
     if (nextToInterpret) {
         QPixmap pm(pasm_isDynamicMemory(nextToInterpret->data(ADDRESS_ROLE).toUInt()) ?
-                   ":/res/img/dynamic-memory.png" : ":/res/img/static-memory.png");
+                   ":/res/img/dynamic-memory.svg" : ":/res/img/static-memory.svg");
         QPainter p(&pm);
         p.setBrush(Qt::red);
         p.setPen(Qt::NoPen);
@@ -519,7 +521,7 @@ void MainWindow::nextLineToInterpret(uint32_t address) {
             valueBinItem = ui->tableMem->item(rowNum, 3);
             instructionItem = ui->tableMem->item(rowNum, 4);
             font.setBold(false);
-            nextToInterpret->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.png" : ":/res/img/static-memory.png"));
+            nextToInterpret->setIcon(QIcon(pasm_isDynamicMemory(address) ? ":/res/img/dynamic-memory.svg" : ":/res/img/static-memory.svg"));
             nextToInterpret->setFont(font);
             valueDecItem->setFont(font);
             valueHexItem->setFont(font);
@@ -547,11 +549,11 @@ void MainWindow::nextLineToInterpret(uint32_t address) {
     QObject::connect(ui->tableMem, SIGNAL(itemChanged(QTableWidgetItem*)), this, SLOT(memItemChanged(QTableWidgetItem*)));
 }
 
-bool MainWindow::saveFile(const QString &fileName) {
-    QString saveAs = fileName;
+bool MainWindow::saveFile(const std::optional<QString> &fileName) {
+    QString saveAs = fileName.value_or("");
     bool cancel = false;
 
-    if (saveAs == NULL) {
+    if (!fileName.has_value()) {
         QDir directory;
         QFileDialog saveDialog(this);
         saveDialog.setDefaultSuffix("asm");
@@ -599,7 +601,7 @@ bool MainWindow::handleUnsavedDocument() {
         answer = QMessageBox::Discard;
 
     if (answer == QMessageBox::Save)
-        cancel = saveFile(NULL);
+        cancel = saveFile(std::nullopt);
     else if (answer == QMessageBox::Cancel)
         cancel = true;
     return cancel;
@@ -786,13 +788,13 @@ void MainWindow::setBreakpoint(uint32_t address, bool enabled) {
 
 void MainWindow::on_actionSave_triggered() {
     if (fileName.isEmpty())
-        saveFile(NULL);
+        saveFile(std::nullopt);
     else
         saveFile(fileName);
 }
 
 void MainWindow::on_actionSaveAs_triggered() {
-    saveFile(NULL);
+    saveFile(std::nullopt);
 }
 
 void MainWindow::on_actionOpen_triggered() {

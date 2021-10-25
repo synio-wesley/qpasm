@@ -12,7 +12,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="qpasm.qrc">
-    <normaloff>:/res/img/qpasm.png</normaloff>:/res/img/qpasm.png</iconset>
+    <normaloff>:/res/img/qpasm.svg</normaloff>:/res/img/qpasm.svg</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -121,7 +121,7 @@
             </property>
             <property name="icon">
              <iconset resource="qpasm.qrc">
-              <normaloff>:/res/img/list-add.png</normaloff>:/res/img/list-add.png</iconset>
+              <normaloff>:/res/img/list-add.svg</normaloff>:/res/img/list-add.svg</iconset>
             </property>
            </widget>
           </item>
@@ -132,7 +132,7 @@
             </property>
             <property name="icon">
              <iconset resource="qpasm.qrc">
-              <normaloff>:/res/img/list-remove.png</normaloff>:/res/img/list-remove.png</iconset>
+              <normaloff>:/res/img/list-remove.svg</normaloff>:/res/img/list-remove.svg</iconset>
             </property>
            </widget>
           </item>
@@ -520,7 +520,7 @@ font-style: italic;</string>
          </property>
          <property name="icon">
           <iconset resource="qpasm.qrc">
-           <normaloff>:/res/img/list-add.png</normaloff>:/res/img/list-add.png</iconset>
+           <normaloff>:/res/img/list-add.svg</normaloff>:/res/img/list-add.svg</iconset>
          </property>
         </widget>
        </item>
@@ -531,7 +531,7 @@ font-style: italic;</string>
          </property>
          <property name="icon">
           <iconset resource="qpasm.qrc">
-           <normaloff>:/res/img/list-remove.png</normaloff>:/res/img/list-remove.png</iconset>
+           <normaloff>:/res/img/list-remove.svg</normaloff>:/res/img/list-remove.svg</iconset>
          </property>
         </widget>
        </item>
@@ -563,7 +563,7 @@ font-style: italic;</string>
   <action name="actionNew">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/document-new.png</normaloff>:/res/img/document-new.png</iconset>
+     <normaloff>:/res/img/document-new.svg</normaloff>:/res/img/document-new.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;New</string>
@@ -578,7 +578,7 @@ font-style: italic;</string>
   <action name="actionOpen">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/document-open.png</normaloff>:/res/img/document-open.png</iconset>
+     <normaloff>:/res/img/document-open.svg</normaloff>:/res/img/document-open.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Open...</string>
@@ -590,7 +590,7 @@ font-style: italic;</string>
   <action name="actionSave">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/document-save.png</normaloff>:/res/img/document-save.png</iconset>
+     <normaloff>:/res/img/document-save.svg</normaloff>:/res/img/document-save.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Save</string>
@@ -602,7 +602,7 @@ font-style: italic;</string>
   <action name="actionSaveAs">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/document-save-as.png</normaloff>:/res/img/document-save-as.png</iconset>
+     <normaloff>:/res/img/document-save-as.svg</normaloff>:/res/img/document-save-as.svg</iconset>
    </property>
    <property name="text">
     <string>Save &amp;As...</string>
@@ -611,7 +611,7 @@ font-style: italic;</string>
   <action name="actionCompile">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/compile.png</normaloff>:/res/img/compile.png</iconset>
+     <normaloff>:/res/img/compile.svg</normaloff>:/res/img/compile.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Compile</string>
@@ -623,7 +623,7 @@ font-style: italic;</string>
   <action name="actionRun">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/run.png</normaloff>:/res/img/run.png</iconset>
+     <normaloff>:/res/img/run.svg</normaloff>:/res/img/run.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Run</string>
@@ -635,7 +635,7 @@ font-style: italic;</string>
   <action name="actionExit">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/application-exit.png</normaloff>:/res/img/application-exit.png</iconset>
+     <normaloff>:/res/img/application-exit.svg</normaloff>:/res/img/application-exit.svg</iconset>
    </property>
    <property name="text">
     <string>E&amp;xit</string>
@@ -644,7 +644,7 @@ font-style: italic;</string>
   <action name="actionStep">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/step.png</normaloff>:/res/img/step.png</iconset>
+     <normaloff>:/res/img/step.svg</normaloff>:/res/img/step.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Step</string>
@@ -664,7 +664,7 @@ font-style: italic;</string>
   <action name="actionUndo">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/edit-undo.png</normaloff>:/res/img/edit-undo.png</iconset>
+     <normaloff>:/res/img/edit-undo.svg</normaloff>:/res/img/edit-undo.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Undo</string>
@@ -676,7 +676,7 @@ font-style: italic;</string>
   <action name="actionRedo">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/edit-redo.png</normaloff>:/res/img/edit-redo.png</iconset>
+     <normaloff>:/res/img/edit-redo.svg</normaloff>:/res/img/edit-redo.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Redo</string>
@@ -688,7 +688,7 @@ font-style: italic;</string>
   <action name="actionTimedStep">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/timed-step.png</normaloff>:/res/img/timed-step.png</iconset>
+     <normaloff>:/res/img/timed-step.svg</normaloff>:/res/img/timed-step.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Timed step</string>
@@ -697,7 +697,7 @@ font-style: italic;</string>
   <action name="actionCut">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/edit-cut.png</normaloff>:/res/img/edit-cut.png</iconset>
+     <normaloff>:/res/img/edit-cut.svg</normaloff>:/res/img/edit-cut.svg</iconset>
    </property>
    <property name="text">
     <string>Cu&amp;t</string>
@@ -709,7 +709,7 @@ font-style: italic;</string>
   <action name="actionCopy">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/edit-copy.png</normaloff>:/res/img/edit-copy.png</iconset>
+     <normaloff>:/res/img/edit-copy.svg</normaloff>:/res/img/edit-copy.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Copy</string>
@@ -721,7 +721,7 @@ font-style: italic;</string>
   <action name="actionPaste">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/edit-paste.png</normaloff>:/res/img/edit-paste.png</iconset>
+     <normaloff>:/res/img/edit-paste.svg</normaloff>:/res/img/edit-paste.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Paste</string>
@@ -733,7 +733,7 @@ font-style: italic;</string>
   <action name="actionStop">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/stop.png</normaloff>:/res/img/stop.png</iconset>
+     <normaloff>:/res/img/stop.svg</normaloff>:/res/img/stop.svg</iconset>
    </property>
    <property name="text">
     <string>S&amp;top</string>
@@ -742,7 +742,7 @@ font-style: italic;</string>
   <action name="actionPause">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/pause.png</normaloff>:/res/img/pause.png</iconset>
+     <normaloff>:/res/img/pause.svg</normaloff>:/res/img/pause.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Pause</string>
@@ -754,7 +754,7 @@ font-style: italic;</string>
   <action name="actionSettings">
    <property name="icon">
     <iconset resource="qpasm.qrc">
-     <normaloff>:/res/img/configure.png</normaloff>:/res/img/configure.png</iconset>
+     <normaloff>:/res/img/configure.svg</normaloff>:/res/img/configure.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Settings</string>

@@ -116,13 +116,13 @@ void NumberingWidget::paintEvent(QPaintEvent *e) {
         if (position.y() > verticalScroll + edit->viewport()->height())
             break;
         const QString txt = QString::number(lineCount);
-        neededWidth = qMax(neededWidth, fontMetrics().width(txt));
+        neededWidth = qMax(neededWidth, fontMetrics().horizontalAdvance(txt));
         p.setPen(QColor(150, 150, 150));
-        p.drawText(width() - fm.width(txt) - 4, qRound(position.y()) + fontMetrics().ascent() - verticalScroll + 1, txt);
+        p.drawText(width() - fm.horizontalAdvance(txt) - 4, qRound(position.y()) + fontMetrics().ascent() - verticalScroll + 1, txt);
         if (edit->breakpointList() && edit->breakpointList()->contains(lineCount)) {
             if (!edit->breakpointsEnabled())
                 p.setOpacity(0.4);
-            p.drawPixmap(0, qRound(position.y()) - verticalScroll + 1, 16, 16, QPixmap(":/res/img/bp.png"));
+            p.drawPixmap(0, qRound(position.y()) - verticalScroll + 1, 16, 16, QPixmap(":/res/img/bp.svg"));
         }
         p.setOpacity(1.0);
     }
@@ -137,7 +137,7 @@ void NumberingWidget::mouseReleaseEvent(QMouseEvent *e) {
 
     for (QTextBlock block = edit->document()->begin(); block.isValid(); block = block.next(), ++lineCount) {
         const QRectF boundingRect = edit->document()->documentLayout()->blockBoundingRect(block);
-        if (e->y() > height - verticalScroll && e->y() < height - verticalScroll + boundingRect.height()) {
+        if (e->position().y() > height - verticalScroll && e->position().y() < height - verticalScroll + boundingRect.height()) {
             emit lineClicked(lineCount);
             break;
         }
@@ -157,7 +157,7 @@ CodeEdit::CodeEdit(QWidget *parent) : QFrame(parent) {
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setSpacing(0);
-    layout->setMargin(0);
+    layout->setContentsMargins(0,0,0,0);
     layout->addWidget(numberingWidget);
     layout->addWidget(edit);
     setLayout(layout);
